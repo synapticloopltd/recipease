@@ -5,5 +5,9 @@ Usage:
 Where:
 	<inputfile> is the JSON input file to parse
 
-The output directory is __ALWAYS__ build/docs
- 
+The output directory is __ALWAYS__ the current directory.  The following files 
+will be output:
+
+  a4.pdf - An A4 sized recipe book
+  mobile.pdf - A recipe book sized for mobile devies
+

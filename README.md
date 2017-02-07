@@ -222,7 +222,11 @@ which is a **relative** directory to the `recipease.json` file. (i.e.
 		"Spread 1 teaspoon of the vegetable oil all over the bottom of a large skillet, using your fingers or a piece of paper towel. Put the skillet on a burner and turn the heat to medium-high. In a few seconds, sprinkle a few drops of water on the bottom of the skillet, and if they dance, pop, and sputter, the skillet is hot. The first pancake you make is a test pancake to get the feel of how hot the skillet is, and how long it will take to cook the pancake on both sides. Drop one large spoonful of batter into the skillet.",
 		"As the pancake cooks, watch for tiny bubbles forming on the top and sides, When you see the bubbles all over the topside, this usually means the pancake is ready to turn over. Slide a metal spatula under the pancake and gently turn it over. It should look golden on top. If it looks very brown, turn the heat down a little. Let it cook a few more seconds, then slide the metal spatula again under the pancake, and lift the edge up so you can look and see if the bottom is golden. If it is, remove the pancake from the skillet onto a plate and cut into the middle. If it isnʼt runny it is done.",
 		"Now you are ready to get serious about making your pancakes. Have everything ready to go—butter, syrup, plates, knives, forks napkins—so you can make 3 or 4 pancakes at one time, which is a good serving for each person. Make the pancakes just as you did with the test pancake, this time dropping 3 or 4 large spoonfuls (one at a time) of the batter around the pan, not touching As you remove the pancakes from the skillet, serve them immediately and finally serve yourself. Then you can make more pancakes for those with hearty appetites. Or your friends can take a turn at being a cook and try their hand at making pancakes."
+	],
+	"notes": [
+		"Springle brown sugar over the pancakes and then drizzle lemon juice over it for a sweet 'n' sour taste sensation!"
 	]
+	
 }
 ```
 
@@ -231,18 +235,18 @@ Once you have set up your `recipease.json` files and all of your sections with t
 
 Simply by
 
-`java -jar recipease-1.0.0-all.jar <input file>`
+`java -jar recipease-1.1.0-all.jar <input file>`
 
 
 For example:
 
-`java -jar recipease-1.0.0-all.jar src/test/resources/recipease.json`
+`java -jar recipease-1.1.0-all.jar src/test/resources/recipease.json`
 
 
-This will then generate the PDF files in the `build/docs` directory:
+This will then generate the PDF files in the current (i.e. `.`) directory:
 
-  - `build/docs/a4.pdf` - for the desktop, and
-  - `build/docs/mobile.pdf` - for moblie devices
+  - `a4.pdf` - for the desktop, and
+  - `mobile.pdf` - for mobile devices
 
 
 
@@ -255,8 +259,13 @@ Usage:
 Where:
 	<inputfile> is the JSON input file to parse
 
-The output directory is __ALWAYS__ build/docs
- 
+The output directory is __ALWAYS__ the current directory.  The following files 
+will be output:
+
+  a4.pdf - An A4 sized recipe book
+  mobile.pdf - A recipe book sized for mobile devies
+
+
 ```
 
 
@@ -342,7 +351,7 @@ This should appear in the artefact repository along with the compiled code, as a
 
 For example:
 
-`recipease-1.0.0.jar -> recipease-1.0.0-all.jar`
+`recipease-1.1.0.jar -> recipease-1.1.0-all.jar`
 
 
 
@@ -456,9 +465,9 @@ As such, this is not a repository, but a location to download files from.
 
 ```
 dependencies {
-	runtime(group: 'synapticloop', name: 'recipease', version: '1.0.0', ext: 'jar')
+	runtime(group: 'synapticloop', name: 'recipease', version: '1.1.0', ext: 'jar')
 
-	compile(group: 'synapticloop', name: 'recipease', version: '1.0.0', ext: 'jar')
+	compile(group: 'synapticloop', name: 'recipease', version: '1.1.0', ext: 'jar')
 }
 ```
 
@@ -470,9 +479,9 @@ or, more simply for versions of gradle greater than 2.1
 
 ```
 dependencies {
-	runtime 'synapticloop:recipease:1.0.0'
+	runtime 'synapticloop:recipease:1.1.0'
 
-	compile 'synapticloop:recipease:1.0.0'
+	compile 'synapticloop:recipease:1.1.0'
 }
 ```
 
@@ -490,7 +499,7 @@ dependencies {
 <dependency>
 	<groupId>synapticloop</groupId>
 	<artifactId>recipease</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<type>jar</type>
 </dependency>
 ```

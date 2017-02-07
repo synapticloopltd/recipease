@@ -12,9 +12,9 @@ For example:{\n}{\n}
 `java -jar recipease-{version}-all.jar src/test/resources/recipease.json`{\n}
 {\n}
 {\n}
-This will then generate the PDF files in the `build/docs` directory:{\n}
+This will then generate the PDF files in the current (i.e. `.`) directory:{\n}
 {\n}
-  - `build/docs/a4.pdf` - for the desktop, and{\n}
-  - `build/docs/mobile.pdf` - for moblie devices{\n}
+  - `a4.pdf` - for the desktop, and{\n}
+  - `mobile.pdf` - for mobile devices{\n}
 {\n}
 {\n}

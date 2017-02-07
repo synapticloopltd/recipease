@@ -16,7 +16,6 @@ package synapticloop.recipease.function;
  * this source code or binaries.
  */
 
-
 import synapticloop.templar.exception.FunctionException;
 import synapticloop.templar.function.Function;
 import synapticloop.templar.helper.ObjectHelper;

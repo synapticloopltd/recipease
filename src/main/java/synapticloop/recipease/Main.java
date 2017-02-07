@@ -62,12 +62,16 @@ import synapticloop.util.simplelogger.Logger;
 public class Main {
 	private static Logger LOGGER = Logger.getLoggerSimpleName(Main.class);
 
+	private static final String JSON_KEY_SECTIONS = "sections";
+	private static final String JSON_KEY_TITLE = "title";
+	private static final String JSON_KEY_IMPORT = "import";
+	private static final String JSON_KEY_RECIPES = "recipes";
+
 	private static final String RECIPEASE_TEMPLAR_XML = "src/main/resources/recipease.templar.xml";
-	private static final String OUTPUT_DIRECTORY = "build/docs";
 
 	private static Map<String, ConfigBean> OUTPUT_MAP = new HashMap<String, ConfigBean>();
 	static {
-		OUTPUT_MAP.put("./build/docs/a4.pdf", 
+		OUTPUT_MAP.put("./a4.pdf", 
 				new ConfigBean("1.5cm", 
 						"1.5cm", 
 						"1.5cm", 
@@ -79,7 +83,7 @@ public class Main {
 						"0.5cm", 
 						"1.5cm", 
 						"18cm"));
-		OUTPUT_MAP.put("./build/docs/mobile.pdf", 
+		OUTPUT_MAP.put("./mobile.pdf", 
 				new ConfigBean("0.5cm", 
 						"0.5cm", 
 						"2.2cm", 
@@ -162,9 +166,6 @@ public class Main {
 	 * @param args The command line arguments
 	 */
 	public static void main(String[] args) {
-		File file = new File(OUTPUT_DIRECTORY);
-		file.mkdirs();
-
 		if(args.length != 1) {
 			SimpleUsage.usageAndExit();
 		}
@@ -181,24 +182,24 @@ public class Main {
 			// find the import files
 			File baseDirectory = recipeaseFile.getParentFile().getAbsoluteFile();
 
-			JSONArray sectionsArray = jsonObject.getJSONArray("sections");
+			JSONArray sectionsArray = jsonObject.getJSONArray(JSON_KEY_SECTIONS);
 			for (Object section : sectionsArray) {
 				JSONObject sectionObject = (JSONObject)section;
-				LOGGER.info(String.format("Retrieving recipes for '%s'", sectionObject.optString("title")));
+				LOGGER.info(String.format("Retrieving recipes for '%s'", sectionObject.optString(JSON_KEY_TITLE)));
 
 				int recipeOffset = 0;
-				JSONArray recipesArray = sectionObject.getJSONArray("recipes");
+				JSONArray recipesArray = sectionObject.getJSONArray(JSON_KEY_RECIPES);
 				for (Object recipe : recipesArray) {
 					JSONObject recipeObject = (JSONObject)recipe;
-					String importLocation = recipeObject.optString("import", null);
+					String importLocation = recipeObject.optString(JSON_KEY_IMPORT, null);
 					if(null != importLocation) {
 						JSONObject parseRecipe = parseRecipe(baseDirectory.getPath(), importLocation);
 						if(null != parseRecipe) {
 							// go through and add the object to the current position in the array
-							LOGGER.info(String.format("Successfully parsed recipe '%s', from '%s'", parseRecipe.optString("title"), importLocation));
+							LOGGER.info(String.format("Successfully parsed recipe '%s', from '%s'", parseRecipe.optString(JSON_KEY_TITLE), importLocation));
 						} else {
 							parseRecipe = new JSONObject();
-							parseRecipe.put("title", String.format("Could not read recipe from '%s'", importLocation));
+							parseRecipe.put(JSON_KEY_TITLE, String.format("Could not read recipe from '%s'", importLocation));
 							LOGGER.fatal(String.format("Could not parse recipe from '%s'", importLocation));
 						}
 						recipesArray.put(recipeOffset, parseRecipe);
@@ -221,6 +222,7 @@ public class Main {
 				if(!templarContext.hasFunction("startsWith")) {
 					templarContext.addFunction("startsWith", new FunctionStartsWith());
 				}
+
 				templarContext.add("recipease", parseResponse(jsonObject.toString()));
 				templarContext.add("config", OUTPUT_MAP.get(outputFile));
 

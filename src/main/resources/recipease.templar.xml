@@ -28,16 +28,19 @@
 				font-weight="bold" 
 				id="top-page">{recipease.title}</fo:block>
 
-		<fo:block font-size="16pt" 
-				text-align="center" 
-				font-style="italic" 
-				padding="2mm" 
-				space-before.minimum="2em" 
-				space-after.minimum="2em" 
-				border-left-width="2mm" 
-				border-left-color="gray" 
-				border-left-style="solid" 
-				background-color="rgb(230,230,230)"><fo:inline >{recipease.subTitle}</fo:inline></fo:block>
+		{if fn:notNull[recipease.subTitle]}
+			<fo:block font-size="16pt" 
+					text-align="center" 
+					font-style="italic" 
+					padding="2mm" 
+					space-before.minimum="2em" 
+					space-after.minimum="2em" 
+					border-left-width="2mm" 
+					border-left-color="gray" 
+					border-left-style="solid" 
+					background-color="rgb(230,230,230)"><fo:inline >{recipease.subTitle}</fo:inline></fo:block>
+		{endif}
+
 	</fo:flow>
 </fo:page-sequence>
 
