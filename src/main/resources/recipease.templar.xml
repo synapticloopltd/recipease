@@ -15,17 +15,7 @@
 </fo:layout-master-set>
 
 <fo:page-sequence master-reference="both">
-	<!-- 
-	  This is the content that goes at the bottom of every page
-	  -->
-	<fo:static-content flow-name="xsl-region-after">
-		<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
-		<fo:block text-align-last="center" font-size="10pt" font-style="italic">
-			<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
-		</fo:block>
-		<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
-		<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
-	</fo:static-content>
+	{import classpath:/recipease.footer.xml}
 
 	<fo:flow flow-name="xsl-region-body">
 		<fo:block text-align="center" 
@@ -84,18 +74,7 @@
   -->
 {loop recipease.sections as section}
 	<fo:page-sequence master-reference="both">
-
-		<!-- 
-		  This is the content that goes at the bottom of every page (i.e. the footer)
-		  -->
-		<fo:static-content flow-name="xsl-region-after">
-			<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
-			<fo:block text-align-last="center" font-size="10pt" font-style="italic">
-				<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
-			</fo:block>
-			<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
-			<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
-		</fo:static-content>
+		{import classpath:/recipease.footer.xml}
 	
 		<fo:flow flow-name="xsl-region-body">
 			<fo:block text-align="center"><fo:external-graphic content-width="{config.imageWidth}" src="{section.image}"/></fo:block>
