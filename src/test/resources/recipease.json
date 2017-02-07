@@ -20,6 +20,7 @@
 				{ "import": "morning-tea/raspberry-muffins.json"},
 				{ "import": "morning-tea/banana-bread.json"},
 				{ "import": "morning-tea/anzac-biscuits.json"},
+				{ "import": "morning-tea/anzac-biscuits-alternate.json"},
 				{ "import": "morning-tea/financiers.json"}
 			]
 		},
@@ -71,11 +72,14 @@
 			]
 		},
 		{
-			"title": "Desserts",
-			"image": "src/test/resources/images/desserts.jpg", 
+			"title": "Cakes",
+			"image": "src/test/resources/images/cakes.jpg", 
 			"recipes": [
-				{ "import": "desserts/lemon-polenta-cake.json" },
-				{ "import": "desserts/torta-caprese.json" }
+				{ "import": "cakes/lemon-polenta-cake.json" },
+				{ "import": "cakes/torta-caprese.json" },
+				{ "import": "cakes/carrot-cake.json" },
+				{ "import": "cakes/chocolate-raspberry-loaf-cake.json" },
+				{ "import": "cakes/greek-yogurt-chocolate-cake.json" }
 			]
 		}
 	]

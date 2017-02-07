@@ -165,9 +165,13 @@ public class Main {
 						JSONObject parseRecipe = parseRecipe(baseDirectory.getPath(), importLocation);
 						if(null != parseRecipe) {
 							// go through and add the object to the current position in the array
-							recipesArray.put(recipeOffset, parseRecipe);
 							LOGGER.info(String.format("Successfully parsed recipe '%s', from '%s'", parseRecipe.optString("title"), importLocation));
+						} else {
+							parseRecipe = new JSONObject();
+							parseRecipe.put("title", String.format("Could not read recipe from '%s'", importLocation));
+							LOGGER.fatal(String.format("Could not parse recipe from '%s'", importLocation));
 						}
+						recipesArray.put(recipeOffset, parseRecipe);
 					}
 					recipeOffset++;
 				}

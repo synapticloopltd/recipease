@@ -182,9 +182,14 @@
 								<fo:list-block>
 							{endif}
 							{if fn:startsWith["§", ingredient]}
-								</fo:list-block>
-										<fo:block padding-bottom="2mm" padding-top="2mm">{ingredient}</fo:block>
-								<fo:list-block>
+								<fo:list-item>
+									<fo:list-item-label end-indent="label-end()">
+										<fo:block start-indent="0mm"></fo:block>
+									</fo:list-item-label>
+									<fo:list-item-body start-indent="body-start()">
+										<fo:block start-indent="0mm"><fo:inline font-weight="bold">{ingredient}</fo:inline></fo:block>
+									</fo:list-item-body>
+								</fo:list-item>
 							{else}
 								<fo:list-item>
 									<fo:list-item-label end-indent="label-end()">
@@ -207,26 +212,44 @@
 					<fo:block padding-bottom="9mm">
 						<fo:block font-size="18pt" font-weight="bold" text-align="left">Directions</fo:block>
 						{loop recipe.directions as direction}
-							{if directionStatus.first}
-								<fo:list-block >
+							{if directionStatus.first}{set directionStatus.index as directionNum}{endif}
+
+							{if fn:and[directionStatus.first, fn:startsWith["§", direction]]}
+								<fo:block start-indent="5mm" font-weight="bold">{direction}</fo:block>
+								{set directionStatus.index as "1"}
+
+								<fo:list-block>
+							{else}
+								{if fn:and[directionStatus.first, !fn:startsWith["§", direction]]}
+									<fo:list-block>
+								{endif}
+
+								{if fn:and[fn:startsWith["§", direction], !directionStatus.first}
+									</fo:list-block>
+
+									<fo:block padding-bottom="5mm" padding-top="2mm" font-weight="bold">{direction}</fo:block>
+
+									<fo:list-block>
+								{else}
+									<fo:list-item>
+										<fo:list-item-label end-indent="label-end()">
+											<fo:block start-indent="10mm">{directionNum}.</fo:block>
+										</fo:list-item-label>
+										<fo:list-item-body start-indent="body-start()">
+											<fo:block start-indent="17mm">{direction}</fo:block>
+										</fo:list-item-body>
+									</fo:list-item>
+									{set fn:+[directionNum, "1"] as directionNum}
+								{endif}
+
+
+								{if directionStatus.last}
+									</fo:list-block>
+								{endif}
 							{endif}
-								<fo:list-item>
-									<fo:list-item-label end-indent="label-end()">
-										<fo:block start-indent="10mm">{directionStatus.index}.</fo:block>
-									</fo:list-item-label>
-									<fo:list-item-body start-indent="body-start()">
-										<fo:block start-indent="17mm">
-										{if fn:startsWith["§", direction]}
-											<fo:inline font-weight="bold">{direction}</fo:inline>
-										{else}
-											{direction}
-										{endif}
-										</fo:block>
-									</fo:list-item-body>
-								</fo:list-item>
-							{if directionStatus.last}
-								</fo:list-block>
-							{endif}
+
+
+
 						{endloop}
 					</fo:block>
 				{endif}
