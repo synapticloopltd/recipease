@@ -50,13 +50,7 @@
 				background-color="rgb(230,230,230)"><fo:inline >{recipease.subTitle}</fo:inline></fo:block>
 
 		<!-- Now for the table of contents -->
-		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm">
-			{if fn:null[recipease.tocTitle]}
-				Table of Contents
-			{else}
-				{recipease.tocTitle}
-			{endif}
-		</fo:block>
+		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm">{recipease.tocTitle}</fo:block>
 
 		{loop recipease.sections as section}
 			
@@ -152,7 +146,7 @@
 
 				{if fn:notNull[recipe.notes]}
 					<fo:block padding-bottom="9mm">
-						<fo:block font-size="18pt" font-weight="bold" text-align="left">Notes</fo:block>
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">{recipease.notesTitle}</fo:block>
 						{loop recipe.notes as note}
 							{if noteStatus.first}
 								<fo:list-block>
@@ -176,7 +170,7 @@
 
 				{if fn:notNull[recipe.ingredients]}
 					<fo:block padding-bottom="9mm">
-						<fo:block font-size="18pt" font-weight="bold" text-align="left">Ingredients</fo:block>
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">{recipease.ingredientsTitle}</fo:block>
 						{loop recipe.ingredients as ingredient}
 							{if ingredientStatus.first}
 								<fo:list-block>
@@ -210,7 +204,7 @@
 
 				{if fn:notNull[recipe.directions]}
 					<fo:block padding-bottom="9mm">
-						<fo:block font-size="18pt" font-weight="bold" text-align="left">Directions</fo:block>
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">{recipease.directionsTitle}</fo:block>
 						{loop recipe.directions as direction}
 							{if directionStatus.first}{set directionStatus.index as directionNum}{endif}
 

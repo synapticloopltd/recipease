@@ -3,6 +3,9 @@
 	"image":"src/test/resources/images/recipes.jpg",
 	"subTitle":"\"Recipes that we have collected and tested from many of our favourite sources and make available to everybody\"",
 	"tocTitle":"Table of Contents",
+	"ingredientsTitle": "Ingredients",
+	"notesTitle": "Notes from the field...",
+	"directionsTitle": "Directions",
 	"sections": [
 		{
 			"title": "Breakfast",
@@ -49,7 +52,8 @@
 			"recipes": [
 				{ "import": "sides/puree-of-potato-and-celeriac.json" },
 				{ "import": "sides/glazed-carrots-with-thyme.json" },
-				{ "import": "sides/sweet-potato-gratin.json" }
+				{ "import": "sides/sweet-potato-gratin.json" },
+				{ "import": "sides/aubergine-parmigiana.json" }
 			]
 		},
 		{
@@ -68,7 +72,8 @@
 				{ "import": "main-courses/curry-in-a-hurry.json" },
 				{ "import": "main-courses/roast-turkey-with-pan-gravy.json" },
 				{ "import": "main-courses/bolognese-sauce.json" },
-				{ "import": "main-courses/lasagne.json" }
+				{ "import": "main-courses/lasagne.json" },
+				{ "import": "main-courses/gnudi.json" }
 			]
 		},
 		{
@@ -79,7 +84,9 @@
 				{ "import": "cakes/torta-caprese.json" },
 				{ "import": "cakes/carrot-cake.json" },
 				{ "import": "cakes/chocolate-raspberry-loaf-cake.json" },
-				{ "import": "cakes/greek-yogurt-chocolate-cake.json" }
+				{ "import": "cakes/greek-yogurt-chocolate-cake.json" },
+				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
+				
 			]
 		}
 	]
