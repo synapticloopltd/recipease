@@ -1,0 +1,49 @@
+<h3>recipe file format</h3>
+
+<p>
+	The file format is a simple JSON format - an example of which is below:
+</p>
+
+<pre><code>
+{static ../recipease/src/test/resources/breakfast/pancakes.json}
+</code></pre>
+
+<h4>keys</h4>
+
+<p>
+	For each of the keys on the root recipe object:
+</p>
+
+<ul>
+	<li><strong>title</strong> This is the title of the recipe book - this defaults to <em>I never knew what to call this...</em></li>
+	<li><strong>information</strong> <em>(optional)</em> An array of JSON objects with key values</li>
+	<li><strong>ingredients</strong> The ingredients that go into making the recipe.</li>
+	<li><strong>directions</strong> How to make the recipe</li>
+	<li><strong>notes</strong> <em>(optional)</em> Anything of interest about the recipe</li>
+</ul>
+
+<h4>ingredients</h4>
+
+<p>
+	Ingredients can be further broken into sections, for example if you are making a 
+	cake and there is one set of ingredients for the cake and, and another set for the 
+	icing.
+</p>
+
+<p>
+	To break up the ingredients, at the start of the ingredient - place a section 
+	character <code>§</code> and this will highlight the text as separator.
+</p>
+
+<h4>directions</h4>
+
+<p>
+	Directions can also be further broken into sections, for example if there are 
+	multiple things that need to be done in parallel, you can break up the 
+	directions into sections
+</p>
+
+<p>
+	To break up the directions, at the start of the direction - place a section 
+	character <code>§</code> and this will highlight the text as separator.
+</p>

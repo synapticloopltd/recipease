@@ -1,0 +1,53 @@
+<h3>recipease file format</h3>
+
+<p>
+	The file format is a simple JSON format - an example of which is below:
+</p>
+
+<pre><code>
+{static ../recipease/src/test/resources/recipease.json}
+</code></pre>
+
+<h4>keys</h4>
+
+<p>
+	For each of the keys on the root recipease object:
+</p>
+
+<ul>
+	<li><strong>title</strong> This is the title of the recipe book - this defaults to <em>My Delicious Un-Named Recipes</em></li>
+	<li><strong>image</strong> <em>(optional)</em> This is the image to place on the front page of the book</li>
+	<li><strong>subTitle</strong> <em>(optional)</em> This is the sub-title for the recipe book</li>
+	<li><strong>tocTitle</strong> <em>(optional)</em> This is the table of contents name that will be output - default <em>Table of Contents</em></li>
+	<li><strong>ingredientsTitle</strong> <em>(optional)</em> This is the title that goes before the list of ingredients - default <em>Ingredients</em></li>
+	<li><strong>notesTitle</strong> <em>(optional)</em> This is the title that goes before the list of notes - default <em>Notes</em></li>
+	<li><strong>directionsTitle</strong> <em>(optional)</em> This is the title that goes before the list of directions - default <em>Directions</em></li>
+	<li><strong>sections</strong> An array of groupings for the recipe book.</li>
+</ul>
+
+<blockquote>Why so many optional JSON keys?</blockquote>
+
+<p>
+	Simple - because we know that not everybody speaks english, and for those that do 
+	some people want to customise the things that they can.
+</p>
+
+<h4>sections</h4>
+
+<p>
+	Sections are a way to break up your recipe book into multiple groups, we break 
+	it up by meal type - but they can be of any grouping that you want.
+</p>
+
+<ul>
+	<li><strong>title</strong> The title for the section - if not set, this will default to <em>Random deliciousness</em></li>
+	<li><strong>image</strong>  <em>(optional)</em> This is the image to place on the first page of the section</li>
+	<li><strong>recipes</strong> All of the delicious recipes that belong in this section</li>
+</ul>
+
+<h4>Recipes</h4>
+
+<p>
+	All of the recipes are <code>import</code>ed from different files, see the 
+	<a href="recipe-file-format.html">recipe-file-format.html</a> for more details.
+</p>
