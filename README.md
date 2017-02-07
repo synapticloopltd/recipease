@@ -28,21 +28,23 @@
 
  - [recipease](#documentr_heading_0)
  - [Table of Contents](#documentr_heading_1)
- - [Building the Package](#documentr_heading_2)
-   - [*NIX/Mac OS X](#documentr_heading_3)
-   - [Windows](#documentr_heading_4)
- - [Running the Tests](#documentr_heading_5)
+ - [Quickstart](#documentr_heading_2)
+   - [Step 1 - Get the jar](#documentr_heading_3)
+   - [Step 2 - Create the recipease.json file](#documentr_heading_4)
+ - [Building the Package](#documentr_heading_5)
    - [*NIX/Mac OS X](#documentr_heading_6)
    - [Windows](#documentr_heading_7)
- - [All-In-One](#documentr_heading_8)
- - [Artefact Publishing - Bintray](#documentr_heading_9)
-   - [maven setup](#documentr_heading_10)
-   - [gradle setup](#documentr_heading_11)
- - [Artefact Publishing - Github](#documentr_heading_12)
-   - [Dependencies - Gradle](#documentr_heading_13)
-   - [Dependencies - Maven](#documentr_heading_14)
-   - [Dependencies - Downloads](#documentr_heading_15)
-
+ - [Running the Tests](#documentr_heading_8)
+   - [*NIX/Mac OS X](#documentr_heading_9)
+   - [Windows](#documentr_heading_10)
+ - [All-In-One](#documentr_heading_11)
+ - [Artefact Publishing - Bintray](#documentr_heading_12)
+   - [maven setup](#documentr_heading_13)
+   - [gradle setup](#documentr_heading_14)
+ - [Artefact Publishing - Github](#documentr_heading_15)
+   - [Dependencies - Gradle](#documentr_heading_16)
+   - [Dependencies - Maven](#documentr_heading_17)
+   - [Dependencies - Downloads](#documentr_heading_18)
 
 
 
@@ -50,11 +52,225 @@
 
 <a name="documentr_heading_2"></a>
 
-# Building the Package <sup><sup>[top](#documentr_top)</sup></sup>
+# Quickstart <sup><sup>[top](#documentr_top)</sup></sup>
 
 
 
 <a name="documentr_heading_3"></a>
+
+## Step 1 - Get the jar <sup><sup>[top](#documentr_top)</sup></sup>
+
+Download a release from the github releases [https://github.com/synapticloopltd/recipease/releases](https://github.com/synapticloopltd/recipease/releases)
+
+    Ensure that you retrieve the **-all** classifier
+
+
+
+<a name="documentr_heading_4"></a>
+
+## Step 2 - Create the `recipease.json` file  <sup><sup>[top](#documentr_top)</sup></sup>
+
+    The `recipease.json` file can be named anything, although we do recommend leaving it as is
+
+and example file can be found in the `src/test/recipease.json` file, which is included below:
+
+
+
+```
+{
+	"title":"Synapticloop's recipe book",
+	"image":"src/test/resources/images/recipes.jpg",
+	"subTitle":"\\"Recipes that we have collected and tested from many of our favourite sources and make available to everybody\\"",
+	"tocTitle":"Table of Contents",
+	"ingredientsTitle": "Ingredients",
+	"notesTitle": "Notes from the field...",
+	"directionsTitle": "Directions",
+	"sections": [
+		{
+			"title": "Breakfast",
+			"image": "./src/test/resources/images/breakfast.jpg", 
+			"recipes": [
+				{ "import": "breakfast/pancakes.json" }
+			]
+		},
+
+		{
+			"title": "Morning Tea",
+			"image": "./src/test/resources/images/morning-tea.jpg", 
+			"recipes": [
+				{ "import": "morning-tea/scones.json"},
+				{ "import": "morning-tea/raspberry-muffins.json"},
+				{ "import": "morning-tea/banana-bread.json"},
+				{ "import": "morning-tea/anzac-biscuits.json"},
+				{ "import": "morning-tea/anzac-biscuits-alternate.json"},
+				{ "import": "morning-tea/financiers.json"}
+			]
+		},
+		{
+			"title": "Entrees",
+			"image": "src/test/resources/images/entrees.jpg", 
+			"recipes": [
+				{ "import": "entrees/cheese-souffle.json"}
+			]
+		},
+		{
+			"title": "Sauces",
+			"image": "src/test/resources/images/sauces.jpg", 
+			"recipes": [
+				{ "import": "sauces/applesauce.json" },
+				{ "import": "sauces/teriyaki-sauce.json" },
+				{ "import": "sauces/mint-jelly.json" },
+				{ "import": "sauces/peanut-sauce.json" },
+				{ "import": "sauces/bechamel-sauce.json" },
+				{ "import": "sauces/white-sauce.json" }
+			]
+		},
+		{
+			"title": "Sides",
+			"image": "src/test/resources/images/sides.jpg", 
+			"recipes": [
+				{ "import": "sides/puree-of-potato-and-celeriac.json" },
+				{ "import": "sides/glazed-carrots-with-thyme.json" },
+				{ "import": "sides/sweet-potato-gratin.json" },
+				{ "import": "sides/aubergine-parmigiana.json" }
+			]
+		},
+		{
+			"title": "Hors D'Oeuvres",
+			"image": "src/test/resources/images/hors-doeuvres.jpg", 
+			"recipes": [
+				{ "import": "hors-doeuvres/sausage-rolls.json" }
+			]
+		},
+		{
+			"title": "Main Courses",
+			"image": "src/test/resources/images/mains.jpg", 
+			"recipes": [
+				{ "import": "main-courses/baked-ham.json" },
+				{ "import": "main-courses/mushroom-risotto.json" },
+				{ "import": "main-courses/curry-in-a-hurry.json" },
+				{ "import": "main-courses/roast-turkey-with-pan-gravy.json" },
+				{ "import": "main-courses/bolognese-sauce.json" },
+				{ "import": "main-courses/lasagne.json" },
+				{ "import": "main-courses/gnudi.json" }
+			]
+		},
+		{
+			"title": "Cakes",
+			"image": "./src/test/resources/images/cakes.jpg", 
+			"recipes": [
+				{ "import": "cakes/lemon-polenta-cake.json" },
+				{ "import": "cakes/torta-caprese.json" },
+				{ "import": "cakes/carrot-cake.json" },
+				{ "import": "cakes/chocolate-raspberry-loaf-cake.json" },
+				{ "import": "cakes/greek-yogurt-chocolate-cake.json" },
+				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
+				
+			]
+		}
+	]
+	
+}
+```
+
+
+
+You will notice that each of the items in the `recipes` array are just an import 
+statement.  For example:
+
+
+
+```
+{ "import": "breakfast/pancakes.json" }
+```
+
+
+
+which is a **relative** directory to the `recipease.json` file. (i.e. 
+`src/test/resources/breakfast/pancakes.json`, which is as follows:
+
+
+
+```
+{
+	"title":"Pancakes",
+	"information": [
+		{"Course":"breakfast" },
+		{"Time":"under 30 minutes" },
+		{"Skill level":"easy" },
+		{"Cost":"inexpensive" },
+		{"Yield":"about 16 3-inch pancakes" }
+	],
+	"ingredients": [
+		"½ stick (4 Tablespoons) butter 60 gram",
+		"1 cup milk",
+		"2 eggs",
+		"1¼ cups flour",
+		"1 tablespoon sugar",
+		"2 teaspoons baking powder",
+		"½ teaspoon salt",
+		"2 tablespoons vegetable oil",
+		"§ To go with the pancakes:",
+		"Butter at Room Temperature",
+		"Maple Syrup"
+	],
+	"directions": [
+		"If your butter is very cold, cut it into 4 or 5 pieces so it will melt more quickly in the milk. Put the butter and 1 cup milk into a small saucepan and set the saucepan on a stove burner. Turn the heat on to medium. It will only take a minute or two for the milk to get hot enough to melt the butter, so stay by the stove, watch, and stir the milk mixture often. When the milk is hot and the butter is melted, take the saucepan off the burner and let the mixture cool a little.",
+		"Crack the 2 eggs into a mixing bowl. Beat the eggs together with a fork until the yolks and whites are blended and the eggs become all yellow. Before you add the milk and butter to the eggs, be sure the mixture has cooled. Test it by poking your finger quickly in and out of the saucepan to check. If the mixture is barely warm, add it to the eggs. If it is still hot, let it cool a little longer and then add it to the eggs. Stir the eggs and milk mixture together.",
+		"Put the 1¼ cups flour, 1 tablespoon sugar, 2 teaspoons baking powder, and ½ teaspoon salt into a mixing bowl. Stir the flour mixture with a fork, going round and round in the bowl so everything gets mixed together nicely.",
+		"Add the flour mixture (the dry ingredients) to the egg mixture (the wet ingredients). Stir everything together with a large spoon, The minute you see that the batter (this uncooked mixture) looks moist with lots of lumps, kind of like soupy cottage cheese, stop stirring! If you stir too much, the pancakes will be tough.",
+		"Spread 1 teaspoon of the vegetable oil all over the bottom of a large skillet, using your fingers or a piece of paper towel. Put the skillet on a burner and turn the heat to medium-high. In a few seconds, sprinkle a few drops of water on the bottom of the skillet, and if they dance, pop, and sputter, the skillet is hot. The first pancake you make is a test pancake to get the feel of how hot the skillet is, and how long it will take to cook the pancake on both sides. Drop one large spoonful of batter into the skillet.",
+		"As the pancake cooks, watch for tiny bubbles forming on the top and sides, When you see the bubbles all over the topside, this usually means the pancake is ready to turn over. Slide a metal spatula under the pancake and gently turn it over. It should look golden on top. If it looks very brown, turn the heat down a little. Let it cook a few more seconds, then slide the metal spatula again under the pancake, and lift the edge up so you can look and see if the bottom is golden. If it is, remove the pancake from the skillet onto a plate and cut into the middle. If it isnʼt runny it is done.",
+		"Now you are ready to get serious about making your pancakes. Have everything ready to go—butter, syrup, plates, knives, forks napkins—so you can make 3 or 4 pancakes at one time, which is a good serving for each person. Make the pancakes just as you did with the test pancake, this time dropping 3 or 4 large spoonfuls (one at a time) of the batter around the pan, not touching As you remove the pancakes from the skillet, serve them immediately and finally serve yourself. Then you can make more pancakes for those with hearty appetites. Or your friends can take a turn at being a cook and try their hand at making pancakes."
+	]
+}
+```
+
+
+Once you have set up your `recipease.json` files and all of your sections with the imported recipes, you are ready to generate the PDF files.
+
+Simply by
+
+`java -jar recipease-1.0.0-all.jar <input file>`
+
+
+For example:
+
+`java -jar recipease-1.0.0-all.jar src/test/resources/recipease.json`
+
+
+This will then generate the PDF files in the `build/docs` directory:
+
+  - `build/docs/a4.pdf` - for the desktop, and
+  - `build/docs/mobile.pdf` - for moblie devices
+
+
+
+
+```
+Usage:
+
+	java -jar recipease.jar <inputfile>
+
+Where:
+	<inputfile> is the JSON input file to parse
+
+The output directory is __ALWAYS__ build/docs
+ 
+```
+
+
+
+
+
+
+<a name="documentr_heading_5"></a>
+
+# Building the Package <sup><sup>[top](#documentr_top)</sup></sup>
+
+
+
+<a name="documentr_heading_6"></a>
 
 ## *NIX/Mac OS X <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -65,7 +281,7 @@ From the root of the project, simply run
 
 
 
-<a name="documentr_heading_4"></a>
+<a name="documentr_heading_7"></a>
 
 ## Windows <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -78,13 +294,13 @@ Note that this may also run tests (if applicable see the Testing notes)
 
 
 
-<a name="documentr_heading_5"></a>
+<a name="documentr_heading_8"></a>
 
 # Running the Tests <sup><sup>[top](#documentr_top)</sup></sup>
 
 
 
-<a name="documentr_heading_6"></a>
+<a name="documentr_heading_9"></a>
 
 ## *NIX/Mac OS X <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -98,7 +314,7 @@ if you do not have gradle installed, try:
 
 
 
-<a name="documentr_heading_7"></a>
+<a name="documentr_heading_10"></a>
 
 ## Windows <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -116,7 +332,7 @@ The `--info` switch will also output logging for the tests
 
 
 
-<a name="documentr_heading_8"></a>
+<a name="documentr_heading_11"></a>
 
 # All-In-One <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -132,7 +348,7 @@ For example:
 
 
 
-<a name="documentr_heading_9"></a>
+<a name="documentr_heading_12"></a>
 
 # Artefact Publishing - Bintray <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -142,7 +358,7 @@ This project publishes artefacts to [bintray](https://bintray.com/)
 
 
 
-<a name="documentr_heading_10"></a>
+<a name="documentr_heading_13"></a>
 
 ## maven setup <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -188,7 +404,7 @@ this comes from the jcenter bintray, to set up your repository:
 
 
 
-<a name="documentr_heading_11"></a>
+<a name="documentr_heading_14"></a>
 
 ## gradle setup <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -220,7 +436,7 @@ repositories {
 
 
 
-<a name="documentr_heading_12"></a>
+<a name="documentr_heading_15"></a>
 
 # Artefact Publishing - Github <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -232,7 +448,7 @@ As such, this is not a repository, but a location to download files from.
 
 
 
-<a name="documentr_heading_13"></a>
+<a name="documentr_heading_16"></a>
 
 ## Dependencies - Gradle <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -264,7 +480,7 @@ dependencies {
 
 
 
-<a name="documentr_heading_14"></a>
+<a name="documentr_heading_17"></a>
 
 ## Dependencies - Maven <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -283,7 +499,7 @@ dependencies {
 
 
 
-<a name="documentr_heading_15"></a>
+<a name="documentr_heading_18"></a>
 
 ## Dependencies - Downloads <sup><sup>[top](#documentr_top)</sup></sup>
 
