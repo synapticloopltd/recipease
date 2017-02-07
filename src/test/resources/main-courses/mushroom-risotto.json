@@ -1,0 +1,37 @@
+{
+	"title":"Mushroom Risotto",
+	"information": [
+{ "Course": "main course" },
+{ "Total time": "under 4 hours" },
+{ "Skill level": "Moderate" },
+{ "Cost": "Moderate" },
+{ "Yield": "About ½ pound per serving" }
+	],
+	"ingredients": [
+"400g carnoli rice ",
+"300g unsalted butter",
+"2 banana shallots",
+"1.2l mushroom stock",
+"125ml champagne",
+"150g grated Parmesan",
+"80ml double cream",
+"Black pepper",
+"25ml truffle oil",
+"Piecing mushrooms"
+
+	],
+	"directions": [
+"Make the porcini broth",
+"Melt 200g of butter and soften the shallots",
+"Add the rice and stir until covered with the butter and starting to become transparent",
+"Add the champagne (or white wine) keep stirring until evaporated",
+"Add the broth a ladle at a time.",
+"Just before the rice is ready to serve, add 100g of butter and the 150g of cheese and cream",
+"Serve quickly",
+"drizzle with truffle oil"
+
+	],
+	"notes": [
+		"Risotto is a Italian rice dish cooked in broth to a creamy consistency. The broth may be meat-, fish-, or vegetable-based. Many types of risotto contain butter, wine and onion. It is one of the most common ways of cooking rice in Italy."
+	]
+}

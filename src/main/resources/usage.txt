@@ -1,0 +1,9 @@
+Usage:
+
+	java -jar recipease.jar <inputfile>
+
+Where:
+	<inputfile> is the JSON input file to parse
+
+The output directory is __ALWAYS__ build/docs
+ 

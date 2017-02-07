@@ -1,0 +1,83 @@
+{
+	"title":"Delicious recipes for you",
+	"image":"src/test/resources/images/recipes.jpg",
+	"subTitle":"\"Recipes that we have collected and tested from many of our favourite sources and make available to everybody\"",
+	"tocTitle":"Table of Contents",
+	"sections": [
+		{
+			"title": "Breakfast",
+			"image": "src/test/resources/images/breakfast.jpg", 
+			"recipes": [
+				{ "import": "breakfast/pancakes.json" }
+			]
+		},
+
+		{
+			"title": "Morning Tea",
+			"image": "src/test/resources/images/morning-tea.jpg", 
+			"recipes": [
+				{ "import": "morning-tea/scones.json"},
+				{ "import": "morning-tea/raspberry-muffins.json"},
+				{ "import": "morning-tea/banana-bread.json"},
+				{ "import": "morning-tea/anzac-biscuits.json"},
+				{ "import": "morning-tea/financiers.json"}
+			]
+		},
+		{
+			"title": "Entrees",
+			"image": "src/test/resources/images/entrees.jpg", 
+			"recipes": [
+				{ "import": "entrees/cheese-souffle.json"}
+			]
+		},
+		{
+			"title": "Sauces",
+			"image": "src/test/resources/images/sauces.jpg", 
+			"recipes": [
+				{ "import": "sauces/applesauce.json" },
+				{ "import": "sauces/teriyaki-sauce.json" },
+				{ "import": "sauces/mint-jelly.json" },
+				{ "import": "sauces/peanut-sauce.json" },
+				{ "import": "sauces/bechamel-sauce.json" },
+				{ "import": "sauces/white-sauce.json" }
+			]
+		},
+		{
+			"title": "Sides",
+			"image": "src/test/resources/images/sides.jpg", 
+			"recipes": [
+				{ "import": "sides/puree-of-potato-and-celeriac.json" },
+				{ "import": "sides/glazed-carrots-with-thyme.json" },
+				{ "import": "sides/sweet-potato-gratin.json" }
+			]
+		},
+		{
+			"title": "Hors D'Oeuvres",
+			"image": "src/test/resources/images/hors-doeuvres.jpg", 
+			"recipes": [
+				{ "import": "hors-doeuvres/sausage-rolls.json" }
+			]
+		},
+		{
+			"title": "Main Courses",
+			"image": "src/test/resources/images/mains.jpg", 
+			"recipes": [
+				{ "import": "main-courses/baked-ham.json" },
+				{ "import": "main-courses/mushroom-risotto.json" },
+				{ "import": "main-courses/curry-in-a-hurry.json" },
+				{ "import": "main-courses/roast-turkey-with-pan-gravy.json" },
+				{ "import": "main-courses/bolognese-sauce.json" },
+				{ "import": "main-courses/lasagne.json" }
+			]
+		},
+		{
+			"title": "Desserts",
+			"image": "src/test/resources/images/desserts.jpg", 
+			"recipes": [
+				{ "import": "desserts/lemon-polenta-cake.json" },
+				{ "import": "desserts/torta-caprese.json" }
+			]
+		}
+	]
+	
+}

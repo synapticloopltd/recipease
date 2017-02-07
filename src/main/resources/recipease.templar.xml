@@ -1,0 +1,239 @@
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="Helvetica" font-size="12pt">
+
+<fo:layout-master-set>
+	<fo:simple-page-master margin-right="1.5cm" 
+			margin-left="1.5cm" 
+			margin-bottom="1.5cm" 
+			margin-top="1.5cm" 
+			page-width="21cm" 
+			page-height="29.7cm" master-name="both">
+
+		<fo:region-body margin-top="0.5cm" margin-bottom="1.7cm"/>
+		<fo:region-before extent="0.5cm"/>
+		<fo:region-after extent="1.5cm"/>
+	</fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-reference="both">
+	<!-- 
+	  This is the content that goes at the bottom of every page
+	  -->
+	<fo:static-content flow-name="xsl-region-after">
+		<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
+		<fo:block text-align-last="center" font-size="10pt" font-style="italic">
+			<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
+		</fo:block>
+		<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
+		<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
+	</fo:static-content>
+
+	<fo:flow flow-name="xsl-region-body">
+		<fo:block text-align="center" 
+				space-before.minimum="2em" 
+				space-after.minimum="2em">
+			<fo:external-graphic content-width="18cm" src="{recipease.image}"/>
+		</fo:block>
+
+		<fo:block font-size="24pt" 
+				font-weight="bold" 
+				id="top-page">{recipease.title}</fo:block>
+
+		<fo:block font-size="16pt" 
+				text-align="center" 
+				font-style="italic" 
+				padding="2mm" 
+				space-before.minimum="2em" 
+				space-after.minimum="2em" 
+				border-left-width="2mm" 
+				border-left-color="gray" 
+				border-left-style="solid" 
+				background-color="rgb(230,230,230)"><fo:inline >{recipease.subTitle}</fo:inline></fo:block>
+
+		<!-- Now for the table of contents -->
+		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm">
+			{if fn:null[recipease.tocTitle]}
+				Table of Contents
+			{else}
+				{recipease.tocTitle}
+			{endif}
+		</fo:block>
+
+		{loop recipease.sections as section}
+			
+			<fo:block font-size="14pt" padding-bottom="2mm" padding-top="2mm">
+				<fo:basic-link internal-destination="{section.title}">{section.title}</fo:basic-link>
+			</fo:block>
+
+			{loop section.recipes as recipe}
+				<fo:block text-align-last="justify" start-indent="15pt">
+					<fo:basic-link internal-destination="{sectionStatus.offset}-{recipeStatus.offset}">
+						{recipe.title}
+						<fo:leader leader-pattern="dots" />
+						<fo:page-number-citation ref-id="{sectionStatus.offset}-{recipeStatus.offset}" />
+					</fo:basic-link>
+				</fo:block>
+			{endloop}
+		{endloop}
+ 
+	</fo:flow>
+</fo:page-sequence>
+
+<!--
+  This is the image (if it exists) and the table of contents for each of the 
+  sections within the recipe book. 
+  -->
+{loop recipease.sections as section}
+	<fo:page-sequence master-reference="both">
+
+		<!-- 
+		  This is the content that goes at the bottom of every page (i.e. the footer)
+		  -->
+		<fo:static-content flow-name="xsl-region-after">
+			<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
+			<fo:block text-align-last="center" font-size="10pt" font-style="italic">
+				<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
+			</fo:block>
+			<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
+			<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
+		</fo:static-content>
+	
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block text-align="center"><fo:external-graphic content-width="18cm" src="{section.image}"/></fo:block>
+
+			<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
+
+			<fo:block font-size="18pt" font-weight="bold" padding-bottom="2mm" padding-top="2mm" id="{section.title}">{section.title}</fo:block>
+
+			{loop section.recipes as recipe}
+				<fo:block text-align-last="justify" start-indent="15pt">
+					<fo:basic-link internal-destination="{sectionStatus.offset}-{recipeStatus.offset}">
+						{recipe.title}
+						<fo:leader leader-pattern="dots" />
+						<fo:page-number-citation ref-id="{sectionStatus.offset}-{recipeStatus.offset}" />
+					</fo:basic-link>
+				</fo:block>
+			{endloop}
+
+		</fo:flow>
+	</fo:page-sequence>
+
+	{loop section.recipes as recipe}
+		<fo:page-sequence master-reference="both">
+			<!-- 
+			  This is the content that goes at the bottom of every page (i.e. the footer)
+			  -->
+			<fo:static-content flow-name="xsl-region-after">
+				<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
+				<fo:block text-align-last="center" font-size="10pt" font-style="italic">
+					<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
+				</fo:block>
+				<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
+				<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
+			</fo:static-content>
+
+			<fo:flow flow-name="xsl-region-body">
+				<fo:block font-size="18pt" font-weight="bold" id="{sectionStatus.offset}-{recipeStatus.offset}">{recipe.title}</fo:block>
+
+				<fo:block padding-bottom="9mm">
+					<fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt"/>
+				</fo:block>
+
+
+				{if fn:notNull[recipe.information]}
+					<fo:block  padding-bottom="9mm">
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">Information</fo:block>
+						{loop recipe.information as information}
+							{loop information.information.keySet as key}
+								<fo:block start-indent="10mm"><fo:inline font-weight="bold">{key}</fo:inline>: {information.information.$key}</fo:block>
+							{endloop}
+						{endloop}
+					</fo:block>
+				{endif}
+
+				{if fn:notNull[recipe.notes]}
+					<fo:block padding-bottom="9mm">
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">Notes</fo:block>
+						{loop recipe.notes as note}
+							{if noteStatus.first}
+								<fo:list-block>
+							{endif}
+
+							<fo:list-item>
+								<fo:list-item-label end-indent="label-end()">
+									<fo:block start-indent="10mm">-</fo:block>
+								</fo:list-item-label>
+								<fo:list-item-body start-indent="body-start()">
+									<fo:block start-indent="17mm">{note}</fo:block>
+								</fo:list-item-body>
+							</fo:list-item>
+		
+							{if noteStatus.last}
+								</fo:list-block>
+							{endif}
+						{endloop}
+					</fo:block>
+				{endif}
+
+				{if fn:notNull[recipe.ingredients]}
+					<fo:block padding-bottom="9mm">
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">Ingredients</fo:block>
+						{loop recipe.ingredients as ingredient}
+							{if ingredientStatus.first}
+								<fo:list-block>
+							{endif}
+							{if fn:startsWith["§", ingredient]}
+								</fo:list-block>
+										<fo:block padding-bottom="2mm" padding-top="2mm">{ingredient}</fo:block>
+								<fo:list-block>
+							{else}
+								<fo:list-item>
+									<fo:list-item-label end-indent="label-end()">
+										<fo:block start-indent="10mm">-</fo:block>
+									</fo:list-item-label>
+									<fo:list-item-body start-indent="body-start()">
+										<fo:block start-indent="17mm">{ingredient}</fo:block>
+									</fo:list-item-body>
+								</fo:list-item>
+							{endif}
+		
+							{if ingredientStatus.last}
+								</fo:list-block>
+							{endif}
+						{endloop}
+					</fo:block>
+				{endif}
+
+				{if fn:notNull[recipe.directions]}
+					<fo:block padding-bottom="9mm">
+						<fo:block font-size="18pt" font-weight="bold" text-align="left">Directions</fo:block>
+						{loop recipe.directions as direction}
+							{if directionStatus.first}
+								<fo:list-block >
+							{endif}
+								<fo:list-item>
+									<fo:list-item-label end-indent="label-end()">
+										<fo:block start-indent="10mm">{directionStatus.index}.</fo:block>
+									</fo:list-item-label>
+									<fo:list-item-body start-indent="body-start()">
+										<fo:block start-indent="17mm">
+										{if fn:startsWith["§", direction]}
+											<fo:inline font-weight="bold">{direction}</fo:inline>
+										{else}
+											{direction}
+										{endif}
+										</fo:block>
+									</fo:list-item-body>
+								</fo:list-item>
+							{if directionStatus.last}
+								</fo:list-block>
+							{endif}
+						{endloop}
+					</fo:block>
+				{endif}
+
+			</fo:flow>
+		</fo:page-sequence>
+	{endloop}
+{endloop}
+
+</fo:root>
