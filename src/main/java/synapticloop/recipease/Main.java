@@ -25,6 +25,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -45,6 +48,7 @@ import org.json.JSONObject;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import synapticloop.recipease.bean.ConfigBean;
 import synapticloop.recipease.function.FunctionStartsWith;
 import synapticloop.recipease.model.Recipease;
 import synapticloop.templar.Parser;
@@ -56,18 +60,43 @@ import synapticloop.util.SimpleUsage;
 import synapticloop.util.simplelogger.Logger;
 
 public class Main {
-	private static final String RECIPEASE_TEMPLAR_XML = "src/main/resources/recipease.templar.xml";
-
 	private static Logger LOGGER = Logger.getLoggerSimpleName(Main.class);
 
+	private static final String RECIPEASE_TEMPLAR_XML = "src/main/resources/recipease.templar.xml";
 	private static final String OUTPUT_DIRECTORY = "build/docs";
 
+	//	<fo:simple-page-master margin-right="1.5cm" 
+	//			margin-left="1.5cm" 
+	//			margin-bottom="1.5cm" 
+	//			margin-top="1.5cm" 
+	//			page-width="21cm" 
+	//			page-height="29.7cm" master-name="both">
+	//
+	//		<fo:region-body margin-top="0.5cm" margin-bottom="1.7cm"/>
+	//		<fo:region-before extent="0.5cm"/>
+	//		<fo:region-after extent="1.5cm"/>
+
+	private static Map<String, ConfigBean> OUTPUT_MAP = new HashMap<String, ConfigBean>();
+	static {
+		OUTPUT_MAP.put("./build/docs/a4.pdf", 
+				new ConfigBean("1.5cm", 
+						"1.5cm", 
+						"1.5cm", 
+						"1.5cm", 
+						"21cm", 
+						"29.7cm", 
+						"0.5cm", 
+						"1.7cm", 
+						"0.5cm", 
+						"1.5cm", 
+						"18cm"));
+	}
 
 
-	private static void render(String contents) throws FileNotFoundException, FOPException, TransformerException {
+	private static void renderPDF(String outputFile, String contents) throws FileNotFoundException, FOPException, TransformerException {
 		FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
 
-		OutputStream out = new BufferedOutputStream(new FileOutputStream(new File("./build/docs/iphone.pdf")));
+		OutputStream out = new BufferedOutputStream(new FileOutputStream(new File(outputFile)));
 
 		try {
 			// Step 3: Construct fop with desired output format
@@ -182,16 +211,22 @@ public class Main {
 			System.exit(-1);
 		}
 
-		try {
-			TemplarContext templarContext = new TemplarContext();
-			templarContext.addFunction("startsWith", new FunctionStartsWith());
-			templarContext.add("recipease", parseResponse(jsonObject.toString()));
+		Iterator<String> iterator = OUTPUT_MAP.keySet().iterator();
+		while (iterator.hasNext()) {
+			String outputFile = (String) iterator.next();
 
-			Parser parser = new Parser(new File(RECIPEASE_TEMPLAR_XML));
+			try {
+				TemplarContext templarContext = new TemplarContext();
+				templarContext.addFunction("startsWith", new FunctionStartsWith());
+				templarContext.add("recipease", parseResponse(jsonObject.toString()));
+				templarContext.add("config", OUTPUT_MAP.get(outputFile));
 
-			render(parser.render(templarContext));
-		} catch (JSONException | IOException | FOPException | TransformerException | ParseException | RenderException | FunctionException ex) {
-			ex.printStackTrace();
+				Parser parser = new Parser(new File(RECIPEASE_TEMPLAR_XML));
+
+				renderPDF(outputFile, parser.render(templarContext));
+			} catch (JSONException | IOException | FOPException | TransformerException | ParseException | RenderException | FunctionException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
