@@ -166,7 +166,7 @@
 										<fo:block start-indent="0mm"></fo:block>
 									</fo:list-item-label>
 									<fo:list-item-body start-indent="body-start()">
-										<fo:block start-indent="0mm"><fo:inline font-weight="bold">{fun:substring[ingredient, "1"]}</fo:inline></fo:block>
+										<fo:block start-indent="0mm"><fo:inline font-weight="bold">{fn:substring[ingredient, "1"]}</fo:inline></fo:block>
 									</fo:list-item-body>
 								</fo:list-item>
 							{else}

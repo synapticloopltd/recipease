@@ -252,12 +252,12 @@ Once you have set up your `recipease.json` files and all of your sections with t
 
 Simply by
 
-`java -jar recipease-1.1.0-all.jar <input file>`
+`java -jar recipease-1.2.0-all.jar <input file>`
 
 
 For example:
 
-`java -jar recipease-1.1.0-all.jar src/test/resources/recipease.json`
+`java -jar recipease-1.2.0-all.jar src/test/resources/recipease.json`
 
 
 This will then generate the PDF files in the current (i.e. `.`) directory:
@@ -368,7 +368,7 @@ This should appear in the artefact repository along with the compiled code, as a
 
 For example:
 
-`recipease-1.1.0.jar -> recipease-1.1.0-all.jar`
+`recipease-1.2.0.jar -> recipease-1.2.0-all.jar`
 
 
 
@@ -482,9 +482,9 @@ As such, this is not a repository, but a location to download files from.
 
 ```
 dependencies {
-	runtime(group: 'synapticloop', name: 'recipease', version: '1.1.0', ext: 'jar')
+	runtime(group: 'synapticloop', name: 'recipease', version: '1.2.0', ext: 'jar')
 
-	compile(group: 'synapticloop', name: 'recipease', version: '1.1.0', ext: 'jar')
+	compile(group: 'synapticloop', name: 'recipease', version: '1.2.0', ext: 'jar')
 }
 ```
 
@@ -496,9 +496,9 @@ or, more simply for versions of gradle greater than 2.1
 
 ```
 dependencies {
-	runtime 'synapticloop:recipease:1.1.0'
+	runtime 'synapticloop:recipease:1.2.0'
 
-	compile 'synapticloop:recipease:1.1.0'
+	compile 'synapticloop:recipease:1.2.0'
 }
 ```
 
@@ -516,7 +516,7 @@ dependencies {
 <dependency>
 	<groupId>synapticloop</groupId>
 	<artifactId>recipease</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<type>jar</type>
 </dependency>
 ```
@@ -541,7 +541,7 @@ You will also need to download the following dependencies:
   - `synapticloop:simpleusage:1.1.2`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/simpleusage/1.1.2/view#files/synapticloop/simpleusage/1.1.2) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|simpleusage|1.1.2|jar))
   - `org.apache.xmlgraphics:xmlgraphics-commons:2.1`: (It may be available on one of: [bintray](https://bintray.com/org.apache.xmlgraphics/maven/xmlgraphics-commons/2.1/view#files/org.apache.xmlgraphics/xmlgraphics-commons/2.1) [mvn central](http://search.maven.org/#artifactdetails|org.apache.xmlgraphics|xmlgraphics-commons|2.1|jar))
   - `org.apache.xmlgraphics:fop:2.1`: (It may be available on one of: [bintray](https://bintray.com/org.apache.xmlgraphics/maven/fop/2.1/view#files/org.apache.xmlgraphics/fop/2.1) [mvn central](http://search.maven.org/#artifactdetails|org.apache.xmlgraphics|fop|2.1|jar))
-  - `synapticloop:templar:1.4.1`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/templar/1.4.1/view#files/synapticloop/templar/1.4.1) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|templar|1.4.1|jar))
+  - `synapticloop:templar:1.4.2`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/templar/1.4.2/view#files/synapticloop/templar/1.4.2) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|templar|1.4.2|jar))
   - `com.fasterxml.jackson.core:jackson-databind:2.8.5`: (It may be available on one of: [bintray](https://bintray.com/com.fasterxml.jackson.core/maven/jackson-databind/2.8.5/view#files/com.fasterxml.jackson.core/jackson-databind/2.8.5) [mvn central](http://search.maven.org/#artifactdetails|com.fasterxml.jackson.core|jackson-databind|2.8.5|jar))
 
 
@@ -552,7 +552,7 @@ You will also need to download the following dependencies:
   - `synapticloop:simpleusage:1.1.2`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/simpleusage/1.1.2/view#files/synapticloop/simpleusage/1.1.2) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|simpleusage|1.1.2|jar))
   - `org.apache.xmlgraphics:xmlgraphics-commons:2.1`: (It may be available on one of: [bintray](https://bintray.com/org.apache.xmlgraphics/maven/xmlgraphics-commons/2.1/view#files/org.apache.xmlgraphics/xmlgraphics-commons/2.1) [mvn central](http://search.maven.org/#artifactdetails|org.apache.xmlgraphics|xmlgraphics-commons|2.1|jar))
   - `org.apache.xmlgraphics:fop:2.1`: (It may be available on one of: [bintray](https://bintray.com/org.apache.xmlgraphics/maven/fop/2.1/view#files/org.apache.xmlgraphics/fop/2.1) [mvn central](http://search.maven.org/#artifactdetails|org.apache.xmlgraphics|fop|2.1|jar))
-  - `synapticloop:templar:1.4.1`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/templar/1.4.1/view#files/synapticloop/templar/1.4.1) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|templar|1.4.1|jar))
+  - `synapticloop:templar:1.4.2`: (It may be available on one of: [bintray](https://bintray.com/synapticloop/maven/templar/1.4.2/view#files/synapticloop/templar/1.4.2) [mvn central](http://search.maven.org/#artifactdetails|synapticloop|templar|1.4.2|jar))
   - `com.fasterxml.jackson.core:jackson-databind:2.8.5`: (It may be available on one of: [bintray](https://bintray.com/com.fasterxml.jackson.core/maven/jackson-databind/2.8.5/view#files/com.fasterxml.jackson.core/jackson-databind/2.8.5) [mvn central](http://search.maven.org/#artifactdetails|com.fasterxml.jackson.core|jackson-databind|2.8.5|jar))
 
 
