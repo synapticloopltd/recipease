@@ -108,17 +108,7 @@
 
 	{loop section.recipes as recipe}
 		<fo:page-sequence master-reference="both">
-			<!-- 
-			  This is the content that goes at the bottom of every page (i.e. the footer)
-			  -->
-			<fo:static-content flow-name="xsl-region-after">
-				<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
-				<fo:block text-align-last="center" font-size="10pt" font-style="italic">
-					<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
-				</fo:block>
-				<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
-				<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
-			</fo:static-content>
+			{import classpath:/recipease.footer.xml}
 
 			<fo:flow flow-name="xsl-region-body">
 				<fo:block font-size="18pt" font-weight="bold" id="{sectionStatus.offset}-{recipeStatus.offset}">{recipe.title}</fo:block>
@@ -176,7 +166,7 @@
 										<fo:block start-indent="0mm"></fo:block>
 									</fo:list-item-label>
 									<fo:list-item-body start-indent="body-start()">
-										<fo:block start-indent="0mm"><fo:inline font-weight="bold">{ingredient}</fo:inline></fo:block>
+										<fo:block start-indent="0mm"><fo:inline font-weight="bold">{fun:substring[ingredient, "1"]}</fo:inline></fo:block>
 									</fo:list-item-body>
 								</fo:list-item>
 							{else}
@@ -204,7 +194,7 @@
 							{if directionStatus.first}{set directionStatus.index as directionNum}{endif}
 
 							{if fn:and[directionStatus.first, fn:startsWith["§", direction]]}
-								<fo:block start-indent="5mm" font-weight="bold">{direction}</fo:block>
+								<fo:block start-indent="5mm" font-weight="bold">{fn:substring[direction, "1"]}</fo:block>
 								{set directionStatus.index as "1"}
 
 								<fo:list-block>
@@ -216,7 +206,7 @@
 								{if fn:and[fn:startsWith["§", direction], !directionStatus.first}
 									</fo:list-block>
 
-									<fo:block padding-bottom="5mm" padding-top="2mm" font-weight="bold">{direction}</fo:block>
+									<fo:block padding-bottom="5mm" padding-top="2mm" font-weight="bold">{fn:substring[direction, "1"]}</fo:block>
 
 									<fo:list-block>
 								{else}

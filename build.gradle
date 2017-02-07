@@ -17,7 +17,7 @@ group = 'synapticloop'
 archivesBaseName = 'recipease'
 description = """A recipe book creator from json -> PDF"""
 
-version = '1.1.0'
+version = '1.2.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -34,7 +34,7 @@ dependencies {
 	runtime 'synapticloop:simpleusage:1.1.2'
 	runtime 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
 	runtime 'org.apache.xmlgraphics:fop:2.1'
-	runtime 'synapticloop:templar:1.4.1'
+	runtime 'synapticloop:templar:1.4.2'
 	runtime 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
 
 	compile 'org.json:json:20160810'
@@ -42,7 +42,7 @@ dependencies {
 	compile 'synapticloop:simpleusage:1.1.2'
 	compile 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
 	compile 'org.apache.xmlgraphics:fop:2.1'
-	compile 'synapticloop:templar:1.4.1'
+	compile 'synapticloop:templar:1.4.2'
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
 
 	testCompile 'junit:junit:4.12'
