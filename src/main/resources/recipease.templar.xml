@@ -1,16 +1,16 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="Helvetica" font-size="12pt">
 
 <fo:layout-master-set>
-	<fo:simple-page-master margin-right="1.5cm" 
-			margin-left="1.5cm" 
-			margin-bottom="1.5cm" 
-			margin-top="1.5cm" 
-			page-width="21cm" 
-			page-height="29.7cm" master-name="both">
+	<fo:simple-page-master margin-right="{config.pageMarginRight}" 
+			margin-left="{config.pageMarginLeft}" 
+			margin-bottom="{config.pageMarginBottom}" 
+			margin-top="{config.pageMarginTop}" 
+			page-width="{config.pageWidth}" 
+			page-height="{config.pageHeight}" master-name="both">
 
-		<fo:region-body margin-top="0.5cm" margin-bottom="1.7cm"/>
-		<fo:region-before extent="0.5cm"/>
-		<fo:region-after extent="1.5cm"/>
+		<fo:region-body margin-top="{config.regionBodyMarginTop}" margin-bottom="{config.regionBodyMarginBottom}"/>
+		<fo:region-before extent="{config.regionBeforeExtent}"/>
+		<fo:region-after extent="{config.regionAfterExtent}"/>
 	</fo:simple-page-master>
 </fo:layout-master-set>
 
@@ -31,7 +31,7 @@
 		<fo:block text-align="center" 
 				space-before.minimum="2em" 
 				space-after.minimum="2em">
-			<fo:external-graphic content-width="18cm" src="{recipease.image}"/>
+			<fo:external-graphic content-width="{config.imageWidth}" src="{recipease.image}"/>
 		</fo:block>
 
 		<fo:block font-size="24pt" 
@@ -48,7 +48,13 @@
 				border-left-color="gray" 
 				border-left-style="solid" 
 				background-color="rgb(230,230,230)"><fo:inline >{recipease.subTitle}</fo:inline></fo:block>
+	</fo:flow>
+</fo:page-sequence>
 
+<fo:page-sequence master-reference="both">
+	{import classpath:/recipease.footer.xml}
+
+	<fo:flow flow-name="xsl-region-body">
 		<!-- Now for the table of contents -->
 		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm">{recipease.tocTitle}</fo:block>
 
@@ -92,7 +98,7 @@
 		</fo:static-content>
 	
 		<fo:flow flow-name="xsl-region-body">
-			<fo:block text-align="center"><fo:external-graphic content-width="18cm" src="{section.image}"/></fo:block>
+			<fo:block text-align="center"><fo:external-graphic content-width="{config.imageWidth}" src="{section.image}"/></fo:block>
 
 			<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
 

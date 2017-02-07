@@ -65,17 +65,6 @@ public class Main {
 	private static final String RECIPEASE_TEMPLAR_XML = "src/main/resources/recipease.templar.xml";
 	private static final String OUTPUT_DIRECTORY = "build/docs";
 
-	//	<fo:simple-page-master margin-right="1.5cm" 
-	//			margin-left="1.5cm" 
-	//			margin-bottom="1.5cm" 
-	//			margin-top="1.5cm" 
-	//			page-width="21cm" 
-	//			page-height="29.7cm" master-name="both">
-	//
-	//		<fo:region-body margin-top="0.5cm" margin-bottom="1.7cm"/>
-	//		<fo:region-before extent="0.5cm"/>
-	//		<fo:region-after extent="1.5cm"/>
-
 	private static Map<String, ConfigBean> OUTPUT_MAP = new HashMap<String, ConfigBean>();
 	static {
 		OUTPUT_MAP.put("./build/docs/a4.pdf", 
@@ -90,6 +79,18 @@ public class Main {
 						"0.5cm", 
 						"1.5cm", 
 						"18cm"));
+		OUTPUT_MAP.put("./build/docs/mobile.pdf", 
+				new ConfigBean("0.5cm", 
+						"0.5cm", 
+						"2.2cm", 
+						"0.5cm", 
+						"12cm", 
+						"18cm", 
+						"0.5cm", 
+						"0.3cm", 
+						"0.5cm", 
+						"0.5cm", 
+						"11cm"));
 	}
 
 
@@ -217,7 +218,9 @@ public class Main {
 
 			try {
 				TemplarContext templarContext = new TemplarContext();
-				templarContext.addFunction("startsWith", new FunctionStartsWith());
+				if(!templarContext.hasFunction("startsWith")) {
+					templarContext.addFunction("startsWith", new FunctionStartsWith());
+				}
 				templarContext.add("recipease", parseResponse(jsonObject.toString()));
 				templarContext.add("config", OUTPUT_MAP.get(outputFile));
 

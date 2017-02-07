@@ -47,4 +47,16 @@ public class ConfigBean {
 		this.imageWidth = imageWidth;
 	}
 
+	public String getPageMarginRight() { return this.pageMarginRight; }
+	public String getPageMarginLeft() { return this.pageMarginLeft; }
+	public String getPageMarginBottom() { return this.pageMarginBottom; }
+	public String getPageMarginTop() { return this.pageMarginTop; }
+	public String getPageWidth() { return this.pageWidth; }
+	public String getPageHeight() { return this.pageHeight; }
+	public String getRegionBodyMarginTop() { return this.regionBodyMarginTop; }
+	public String getRegionBodyMarginBottom() { return this.regionBodyMarginBottom;  }
+	public String getRegionBeforeExtent() { return this.regionBeforeExtent; }
+	public String getRegionAfterExtent() { return this.regionAfterExtent; }
+	public String getImageWidth() { return this.imageWidth; }
+
 }
