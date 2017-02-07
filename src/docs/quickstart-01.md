@@ -1,4 +1,9 @@
 
+## Step 3 - create the `recipes.json` files
+
+For each of the recipes that we want to include, we separate them into individual 
+directories and name them as per the recipe name.
+
 You will notice that each of the items in the `recipes` array are just an import 
 statement.  For example:
 

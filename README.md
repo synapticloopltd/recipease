@@ -31,20 +31,22 @@
  - [Quickstart](#documentr_heading_2)
    - [Step 1 - Get the jar](#documentr_heading_3)
    - [Step 2 - Create the recipease.json file](#documentr_heading_4)
- - [Building the Package](#documentr_heading_5)
-   - [*NIX/Mac OS X](#documentr_heading_6)
-   - [Windows](#documentr_heading_7)
- - [Running the Tests](#documentr_heading_8)
-   - [*NIX/Mac OS X](#documentr_heading_9)
-   - [Windows](#documentr_heading_10)
- - [All-In-One](#documentr_heading_11)
- - [Artefact Publishing - Bintray](#documentr_heading_12)
-   - [maven setup](#documentr_heading_13)
-   - [gradle setup](#documentr_heading_14)
- - [Artefact Publishing - Github](#documentr_heading_15)
-   - [Dependencies - Gradle](#documentr_heading_16)
-   - [Dependencies - Maven](#documentr_heading_17)
-   - [Dependencies - Downloads](#documentr_heading_18)
+   - [Step 3 - create the recipes.json files](#documentr_heading_5)
+   - [Step 4 - generate the recipe books](#documentr_heading_6)
+ - [Building the Package](#documentr_heading_7)
+   - [*NIX/Mac OS X](#documentr_heading_8)
+   - [Windows](#documentr_heading_9)
+ - [Running the Tests](#documentr_heading_10)
+   - [*NIX/Mac OS X](#documentr_heading_11)
+   - [Windows](#documentr_heading_12)
+ - [All-In-One](#documentr_heading_13)
+ - [Artefact Publishing - Bintray](#documentr_heading_14)
+   - [maven setup](#documentr_heading_15)
+   - [gradle setup](#documentr_heading_16)
+ - [Artefact Publishing - Github](#documentr_heading_17)
+   - [Dependencies - Gradle](#documentr_heading_18)
+   - [Dependencies - Maven](#documentr_heading_19)
+   - [Dependencies - Downloads](#documentr_heading_20)
 
 
 
@@ -175,6 +177,15 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 
 
 
+
+
+<a name="documentr_heading_5"></a>
+
+## Step 3 - create the `recipes.json` files <sup><sup>[top](#documentr_top)</sup></sup>
+
+For each of the recipes that we want to include, we separate them into individual 
+directories and name them as per the recipe name.
+
 You will notice that each of the items in the `recipes` array are just an import 
 statement.  For example:
 
@@ -231,6 +242,12 @@ which is a **relative** directory to the `recipease.json` file. (i.e.
 ```
 
 
+
+
+<a name="documentr_heading_6"></a>
+
+## Step 4 - generate the recipe books <sup><sup>[top](#documentr_top)</sup></sup>
+
 Once you have set up your `recipease.json` files and all of your sections with the imported recipes, you are ready to generate the PDF files.
 
 Simply by
@@ -245,8 +262,8 @@ For example:
 
 This will then generate the PDF files in the current (i.e. `.`) directory:
 
-  - `a4.pdf` - for the desktop, and
-  - `mobile.pdf` - for mobile devices
+  - `a4.pdf` - for the desktop, and you can see the latest generation here: [a4.pdf](a4.pdf)
+  - `mobile.pdf` - for mobile devices, and you can see the latest generation here: [mobile.pdf](mobile.pdf)
 
 
 
@@ -273,13 +290,13 @@ will be output:
 
 
 
-<a name="documentr_heading_5"></a>
+<a name="documentr_heading_7"></a>
 
 # Building the Package <sup><sup>[top](#documentr_top)</sup></sup>
 
 
 
-<a name="documentr_heading_6"></a>
+<a name="documentr_heading_8"></a>
 
 ## *NIX/Mac OS X <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -290,7 +307,7 @@ From the root of the project, simply run
 
 
 
-<a name="documentr_heading_7"></a>
+<a name="documentr_heading_9"></a>
 
 ## Windows <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -303,13 +320,13 @@ Note that this may also run tests (if applicable see the Testing notes)
 
 
 
-<a name="documentr_heading_8"></a>
+<a name="documentr_heading_10"></a>
 
 # Running the Tests <sup><sup>[top](#documentr_top)</sup></sup>
 
 
 
-<a name="documentr_heading_9"></a>
+<a name="documentr_heading_11"></a>
 
 ## *NIX/Mac OS X <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -323,7 +340,7 @@ if you do not have gradle installed, try:
 
 
 
-<a name="documentr_heading_10"></a>
+<a name="documentr_heading_12"></a>
 
 ## Windows <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -341,7 +358,7 @@ The `--info` switch will also output logging for the tests
 
 
 
-<a name="documentr_heading_11"></a>
+<a name="documentr_heading_13"></a>
 
 # All-In-One <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -357,7 +374,7 @@ For example:
 
 
 
-<a name="documentr_heading_12"></a>
+<a name="documentr_heading_14"></a>
 
 # Artefact Publishing - Bintray <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -367,7 +384,7 @@ This project publishes artefacts to [bintray](https://bintray.com/)
 
 
 
-<a name="documentr_heading_13"></a>
+<a name="documentr_heading_15"></a>
 
 ## maven setup <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -413,7 +430,7 @@ this comes from the jcenter bintray, to set up your repository:
 
 
 
-<a name="documentr_heading_14"></a>
+<a name="documentr_heading_16"></a>
 
 ## gradle setup <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -445,7 +462,7 @@ repositories {
 
 
 
-<a name="documentr_heading_15"></a>
+<a name="documentr_heading_17"></a>
 
 # Artefact Publishing - Github <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -457,7 +474,7 @@ As such, this is not a repository, but a location to download files from.
 
 
 
-<a name="documentr_heading_16"></a>
+<a name="documentr_heading_18"></a>
 
 ## Dependencies - Gradle <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -489,7 +506,7 @@ dependencies {
 
 
 
-<a name="documentr_heading_17"></a>
+<a name="documentr_heading_19"></a>
 
 ## Dependencies - Maven <sup><sup>[top](#documentr_top)</sup></sup>
 
@@ -508,7 +525,7 @@ dependencies {
 
 
 
-<a name="documentr_heading_18"></a>
+<a name="documentr_heading_20"></a>
 
 ## Dependencies - Downloads <sup><sup>[top](#documentr_top)</sup></sup>
 
