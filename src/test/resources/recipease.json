@@ -9,7 +9,7 @@
 	"sections": [
 		{
 			"title": "Breakfast",
-			"image": "src/test/resources/images/breakfast.jpg", 
+			"image": "./src/test/resources/images/breakfast.jpg", 
 			"recipes": [
 				{ "import": "breakfast/pancakes.json" }
 			]
@@ -17,7 +17,7 @@
 
 		{
 			"title": "Morning Tea",
-			"image": "src/test/resources/images/morning-tea.jpg", 
+			"image": "./src/test/resources/images/morning-tea.jpg", 
 			"recipes": [
 				{ "import": "morning-tea/scones.json"},
 				{ "import": "morning-tea/raspberry-muffins.json"},
@@ -78,7 +78,7 @@
 		},
 		{
 			"title": "Cakes",
-			"image": "src/test/resources/images/cakes.jpg", 
+			"image": "./src/test/resources/images/cakes.jpg", 
 			"recipes": [
 				{ "import": "cakes/lemon-polenta-cake.json" },
 				{ "import": "cakes/torta-caprese.json" },

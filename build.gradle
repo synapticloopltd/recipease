@@ -7,8 +7,9 @@ plugins {
 	id 'co.riiid.gradle' version '0.4.2'
 
 	id 'com.github.ben-manes.versions' version '0.13.0'
+	id 'com.github.johnrengelman.shadow' version '1.2.4'
 
-	id 'synapticloop.documentr' version '2.6.1'
+	id 'synapticloop.documentr' version '2.8.2'
 	id "synapticloop.copyrightr" version "1.1.1"
 }
 
@@ -16,12 +17,10 @@ group = 'synapticloop'
 archivesBaseName = 'recipease'
 description = """A recipe book creator from json -> PDF"""
 
-version = '0.9.0'
+version = '1.0.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-
 
 repositories {
 	mavenLocal()
@@ -33,6 +32,7 @@ dependencies {
 	runtime 'org.json:json:20160810'
 	runtime 'synapticloop:simplelogger:1.1.1'
 	runtime 'synapticloop:simpleusage:1.1.2'
+	runtime 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
 	runtime 'org.apache.xmlgraphics:fop:2.1'
 	runtime 'synapticloop:templar:1.4.1'
 	runtime 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
@@ -40,6 +40,7 @@ dependencies {
 	compile 'org.json:json:20160810'
 	compile 'synapticloop:simplelogger:1.1.1'
 	compile 'synapticloop:simpleusage:1.1.2'
+	compile 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
 	compile 'org.apache.xmlgraphics:fop:2.1'
 	compile 'synapticloop:templar:1.4.1'
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
@@ -65,6 +66,14 @@ configurations.all {
 	}
 }
 
+
+
+jar {
+	manifest {
+		attributes("Main-Class": "synapticloop.recipease.Main",
+				"Implementation-Version": version)
+	}
+}
 
 /*
  *
@@ -122,13 +131,13 @@ bintray {
 
 	pkg {
 		repo = 'maven'
-		name = 'backblaze-b2-java-api'
+		name = 'recipease'
 	}
 
 }
 
 github {
-	owner = group
+	owner = 'synapticloopltd'
 	repo = archivesBaseName
 	if(System.getenv('GITHUB_TOKEN')) {
 		token = System.getenv('GITHUB_TOKEN')
@@ -139,4 +148,7 @@ github {
 		'build/libs/' + archivesBaseName + '-' + version + '-all.jar'
 	]
 }
+
+build.finalizedBy(project.tasks.documentr)
+build.finalizedBy(project.tasks.shadowJar)
 
