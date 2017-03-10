@@ -100,19 +100,20 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 			"title": "Morning Tea",
 			"image": "./src/test/resources/images/morning-tea.jpg", 
 			"recipes": [
-				{ "import": "morning-tea/scones.json"},
-				{ "import": "morning-tea/raspberry-muffins.json"},
-				{ "import": "morning-tea/banana-bread.json"},
-				{ "import": "morning-tea/anzac-biscuits.json"},
-				{ "import": "morning-tea/anzac-biscuits-alternate.json"},
-				{ "import": "morning-tea/financiers.json"}
+				{ "import": "morning-tea/scones.json" },
+				{ "import": "morning-tea/raspberry-muffins.json" },
+				{ "import": "morning-tea/banana-bread.json" },
+				{ "import": "morning-tea/anzac-biscuits.json" },
+				{ "import": "morning-tea/anzac-biscuits-alternate.json" },
+				{ "import": "morning-tea/financiers.json" },
+				{ "import": "morning-tea/biscuits.json" }
 			]
 		},
 		{
 			"title": "Entrees",
 			"image": "src/test/resources/images/entrees.jpg", 
 			"recipes": [
-				{ "import": "entrees/cheese-souffle.json"}
+				{ "import": "entrees/cheese-souffle.json" }
 			]
 		},
 		{
