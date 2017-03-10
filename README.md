@@ -106,9 +106,10 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "morning-tea/anzac-biscuits.json" },
 				{ "import": "morning-tea/anzac-biscuits-alternate.json" },
 				{ "import": "morning-tea/financiers.json" },
-				{ "import": "morning-tea/biscuits.json" }
+				{ "import": "morning-tea/chrissies-biscuits.json" }
 			]
 		},
+
 		{
 			"title": "Entrees",
 			"image": "src/test/resources/images/entrees.jpg", 
@@ -116,6 +117,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "entrees/cheese-souffle.json" }
 			]
 		},
+
 		{
 			"title": "Sauces",
 			"image": "src/test/resources/images/sauces.jpg", 
@@ -128,6 +130,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "sauces/white-sauce.json" }
 			]
 		},
+
 		{
 			"title": "Sides",
 			"image": "src/test/resources/images/sides.jpg", 
@@ -138,6 +141,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "sides/aubergine-parmigiana.json" }
 			]
 		},
+
 		{
 			"title": "Hors D'Oeuvres",
 			"image": "src/test/resources/images/hors-doeuvres.jpg", 
@@ -145,6 +149,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "hors-doeuvres/sausage-rolls.json" }
 			]
 		},
+
 		{
 			"title": "Main Courses",
 			"image": "src/test/resources/images/mains.jpg", 
@@ -158,6 +163,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "main-courses/gnudi.json" }
 			]
 		},
+
 		{
 			"title": "Cakes",
 			"image": "./src/test/resources/images/cakes.jpg", 
@@ -170,9 +176,20 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
 				
 			]
+		},
+
+		{
+			"title": "Pastry",
+			"image": "./src/test/resources/images/pastry.jpg", 
+			"recipes": [
+				{ "import": "pastry/sweet-pastry.json" },
+				{ "import": "pastry/pastry-cream.json" },
+				{ "import": "pastry/frangipane-almond-cream.json" }
+				
+			]
 		}
+
 	]
-	
 }
 ```
 
@@ -253,12 +270,12 @@ Once you have set up your `recipease.json` files and all of your sections with t
 
 Simply by
 
-`java -jar recipease-1.2.0-all.jar <input file>`
+`java -jar recipease-1.2.1-all.jar <input file>`
 
 
 For example:
 
-`java -jar recipease-1.2.0-all.jar src/test/resources/recipease.json`
+`java -jar recipease-1.2.1-all.jar src/test/resources/recipease.json`
 
 
 This will then generate the PDF files in the current (i.e. `.`) directory:
@@ -369,7 +386,7 @@ This should appear in the artefact repository along with the compiled code, as a
 
 For example:
 
-`recipease-1.2.0.jar -> recipease-1.2.0-all.jar`
+`recipease-1.2.1.jar -> recipease-1.2.1-all.jar`
 
 
 
@@ -483,9 +500,9 @@ As such, this is not a repository, but a location to download files from.
 
 ```
 dependencies {
-	runtime(group: 'synapticloop', name: 'recipease', version: '1.2.0', ext: 'jar')
+	runtime(group: 'synapticloop', name: 'recipease', version: '1.2.1', ext: 'jar')
 
-	compile(group: 'synapticloop', name: 'recipease', version: '1.2.0', ext: 'jar')
+	compile(group: 'synapticloop', name: 'recipease', version: '1.2.1', ext: 'jar')
 }
 ```
 
@@ -497,9 +514,9 @@ or, more simply for versions of gradle greater than 2.1
 
 ```
 dependencies {
-	runtime 'synapticloop:recipease:1.2.0'
+	runtime 'synapticloop:recipease:1.2.1'
 
-	compile 'synapticloop:recipease:1.2.0'
+	compile 'synapticloop:recipease:1.2.1'
 }
 ```
 
@@ -517,7 +534,7 @@ dependencies {
 <dependency>
 	<groupId>synapticloop</groupId>
 	<artifactId>recipease</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<type>jar</type>
 </dependency>
 ```
