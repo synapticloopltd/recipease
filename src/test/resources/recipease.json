@@ -95,6 +95,18 @@
 				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
 				
 			]
+		},
+
+		{
+			"title": "Pastry",
+			"image": "./src/test/resources/images/pastry.jpg", 
+			"recipes": [
+				{ "import": "pastry/sweet-pastry.json" },
+				{ "import": "pastry/pastry-cream.json" },
+				{ "import": "pastry/frangipane-almond-cream.json" }
+				
+			]
 		}
+
 	]
 }
