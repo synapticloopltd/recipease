@@ -148,6 +148,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 			"title": "Main Courses",
 			"image": "src/test/resources/images/mains.jpg", 
 			"recipes": [
+				{ "import": "main-courses/slow-cooked-lamb.json" },
 				{ "import": "main-courses/baked-ham.json" },
 				{ "import": "main-courses/mushroom-risotto.json" },
 				{ "import": "main-courses/curry-in-a-hurry.json" },
