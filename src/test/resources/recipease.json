@@ -57,7 +57,8 @@
 				{ "import": "sides/puree-of-potato-and-celeriac.json" },
 				{ "import": "sides/glazed-carrots-with-thyme.json" },
 				{ "import": "sides/sweet-potato-gratin.json" },
-				{ "import": "sides/aubergine-parmigiana.json" }
+				{ "import": "sides/aubergine-parmigiana.json" },
+				{ "import": "sides/miso-marinated-aubergine.json" }
 			]
 		},
 
