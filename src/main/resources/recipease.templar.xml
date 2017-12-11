@@ -119,14 +119,16 @@
 
 
 				{if fn:notNull[recipe.information]}
-					<fo:block  padding-bottom="9mm">
-						<fo:block font-size="18pt" font-weight="bold" text-align="left">Information</fo:block>
-						{loop recipe.information as information}
-							{loop information.information.keySet as key}
-								<fo:block start-indent="10mm"><fo:inline font-weight="bold">{key}</fo:inline>: {information.information.$key}</fo:block>
+					{if fn:>[fn:length[recipe.information], "0"]}
+						<fo:block  padding-bottom="9mm">
+							<fo:block font-size="18pt" font-weight="bold" text-align="left">Information</fo:block>
+							{loop recipe.information as information}
+								{loop information.information.keySet as key}
+									<fo:block start-indent="10mm"><fo:inline font-weight="bold">{key}</fo:inline>: {information.information.$key}</fo:block>
+								{endloop}
 							{endloop}
-						{endloop}
-					</fo:block>
+						</fo:block>
+					{endif}
 				{endif}
 
 				{if fn:notNull[recipe.notes]}

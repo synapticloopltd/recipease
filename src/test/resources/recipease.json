@@ -19,21 +19,24 @@
 			"title": "Morning Tea",
 			"image": "./src/test/resources/images/morning-tea.jpg", 
 			"recipes": [
-				{ "import": "morning-tea/scones.json"},
-				{ "import": "morning-tea/raspberry-muffins.json"},
-				{ "import": "morning-tea/banana-bread.json"},
-				{ "import": "morning-tea/anzac-biscuits.json"},
-				{ "import": "morning-tea/anzac-biscuits-alternate.json"},
-				{ "import": "morning-tea/financiers.json"}
+				{ "import": "morning-tea/scones.json" },
+				{ "import": "morning-tea/raspberry-muffins.json" },
+				{ "import": "morning-tea/banana-bread.json" },
+				{ "import": "morning-tea/anzac-biscuits.json" },
+				{ "import": "morning-tea/anzac-biscuits-alternate.json" },
+				{ "import": "morning-tea/financiers.json" },
+				{ "import": "morning-tea/chrissies-biscuits.json" }
 			]
 		},
+
 		{
 			"title": "Entrees",
 			"image": "src/test/resources/images/entrees.jpg", 
 			"recipes": [
-				{ "import": "entrees/cheese-souffle.json"}
+				{ "import": "entrees/cheese-souffle.json" }
 			]
 		},
+
 		{
 			"title": "Sauces",
 			"image": "src/test/resources/images/sauces.jpg", 
@@ -46,6 +49,7 @@
 				{ "import": "sauces/white-sauce.json" }
 			]
 		},
+
 		{
 			"title": "Sides",
 			"image": "src/test/resources/images/sides.jpg", 
@@ -56,6 +60,7 @@
 				{ "import": "sides/aubergine-parmigiana.json" }
 			]
 		},
+
 		{
 			"title": "Hors D'Oeuvres",
 			"image": "src/test/resources/images/hors-doeuvres.jpg", 
@@ -63,6 +68,7 @@
 				{ "import": "hors-doeuvres/sausage-rolls.json" }
 			]
 		},
+
 		{
 			"title": "Main Courses",
 			"image": "src/test/resources/images/mains.jpg", 
@@ -77,6 +83,7 @@
 				{ "import": "main-courses/gnudi.json" }
 			]
 		},
+
 		{
 			"title": "Cakes",
 			"image": "./src/test/resources/images/cakes.jpg", 
@@ -89,7 +96,18 @@
 				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
 				
 			]
+		},
+
+		{
+			"title": "Pastry",
+			"image": "./src/test/resources/images/pastry.jpg", 
+			"recipes": [
+				{ "import": "pastry/sweet-pastry.json" },
+				{ "import": "pastry/pastry-cream.json" },
+				{ "import": "pastry/frangipane-almond-cream.json" }
+				
+			]
 		}
+
 	]
-	
 }
