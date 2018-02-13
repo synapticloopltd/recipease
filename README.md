@@ -127,6 +127,7 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "sauces/mint-jelly.json" },
 				{ "import": "sauces/peanut-sauce.json" },
 				{ "import": "sauces/bechamel-sauce.json" },
+				{ "import": "sauces/big-mac-sauce.json" },
 				{ "import": "sauces/white-sauce.json" }
 			]
 		},
@@ -138,7 +139,8 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "sides/puree-of-potato-and-celeriac.json" },
 				{ "import": "sides/glazed-carrots-with-thyme.json" },
 				{ "import": "sides/sweet-potato-gratin.json" },
-				{ "import": "sides/aubergine-parmigiana.json" }
+				{ "import": "sides/aubergine-parmigiana.json" },
+				{ "import": "sides/miso-marinated-aubergine.json" }
 			]
 		},
 
@@ -154,14 +156,14 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 			"title": "Main Courses",
 			"image": "src/test/resources/images/mains.jpg", 
 			"recipes": [
-				{ "import": "main-courses/slow-cooked-lamb.json" },
 				{ "import": "main-courses/baked-ham.json" },
 				{ "import": "main-courses/mushroom-risotto.json" },
 				{ "import": "main-courses/curry-in-a-hurry.json" },
 				{ "import": "main-courses/roast-turkey-with-pan-gravy.json" },
 				{ "import": "main-courses/bolognese-sauce.json" },
 				{ "import": "main-courses/lasagne.json" },
-				{ "import": "main-courses/gnudi.json" }
+				{ "import": "main-courses/gnudi.json" },
+				{ "import": "main-courses/slow-cooked-lamb.json" }
 			]
 		},
 
@@ -175,7 +177,6 @@ and example file can be found in the `src/test/recipease.json` file, which is in
 				{ "import": "cakes/chocolate-raspberry-loaf-cake.json" },
 				{ "import": "cakes/greek-yogurt-chocolate-cake.json" },
 				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
-				
 			]
 		},
 
