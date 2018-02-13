@@ -1,0 +1,21 @@
+{
+	"title":"Big Mac Sauce",
+	"information": [
+		{"Course":"side dish" },
+		{"Total time":"under 30 minutes" },
+		{"Skill level":"easy" },
+		{"Cost":"inexpensive" }
+	],
+	"ingredients": [
+		" 1/2 cup whole egg mayonnaise",
+		"1 tbsp sweet tomato relish",
+		"1/2 tbsp American mustard",
+		"1/2 tbsp white wine vinegar",
+		"1 tsp garlic powder",
+		"1 tsp onion powder",
+		"1 tsp sweet paprika"
+		],
+	"directions": [
+		"Place all ingredients in a large bowl and mix together"
+	]
+}
