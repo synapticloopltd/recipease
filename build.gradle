@@ -3,21 +3,21 @@ plugins {
 	id 'eclipse'
 	id "maven"
 	id "maven-publish"
-	id "com.jfrog.bintray" version "1.7"
+	id "com.jfrog.bintray" version "1.8.4"
 	id 'co.riiid.gradle' version '0.4.2'
 
-	id 'com.github.ben-manes.versions' version '0.13.0'
-	id 'com.github.johnrengelman.shadow' version '1.2.4'
+	id 'com.github.ben-manes.versions' version '0.21.0'
+	id 'com.github.johnrengelman.shadow' version '5.1.0'
 
-	id 'synapticloop.documentr' version '2.8.2'
-	id "synapticloop.copyrightr" version "1.1.1"
+	id 'synapticloop.documentr' version '2.9.0'
+	id "synapticloop.copyrightr" version "1.2.1"
 }
 
 group = 'synapticloop'
 archivesBaseName = 'recipease'
 description = """A recipe book creator from json -> PDF"""
 
-version = '1.2.1'
+version = '1.2.2'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -29,21 +29,13 @@ repositories {
 }
 
 dependencies {
-	runtime 'org.json:json:20160810'
-	runtime 'synapticloop:simplelogger:1.1.1'
-	runtime 'synapticloop:simpleusage:1.1.2'
-	runtime 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
-	runtime 'org.apache.xmlgraphics:fop:2.1'
-	runtime 'synapticloop:templar:1.4.2'
-	runtime 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
-
-	compile 'org.json:json:20160810'
-	compile 'synapticloop:simplelogger:1.1.1'
-	compile 'synapticloop:simpleusage:1.1.2'
-	compile 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
-	compile 'org.apache.xmlgraphics:fop:2.1'
-	compile 'synapticloop:templar:1.4.2'
-	compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
+	implementation 'org.json:json:20160810'
+	implementation 'synapticloop:simplelogger:2.0.0'
+	implementation 'synapticloop:simpleusage:1.1.2'
+	implementation 'org.apache.xmlgraphics:xmlgraphics-commons:2.3'
+	implementation 'org.apache.xmlgraphics:fop:2.3'
+	implementation 'synapticloop:templar:1.4.4'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9.1'
 
 	testCompile 'junit:junit:4.12'
 
@@ -99,56 +91,56 @@ task sourcesJar(type: Jar) {
 	classifier = 'sources'
 }
 
-publishing {
-	publications {
-		Synapticloop(MavenPublication) {
-			from components.java
-			artifact sourcesJar
-			artifact javadocJar
+ publishing {
+	 publications {
+		 Synapticloop(MavenPublication) {
+			 from components.java
+			 artifact sourcesJar
+			 artifact javadocJar
+ 
+			 groupId 'synapticloop'
+			 artifactId 'recipease'
+ 
+			 pom.withXml {
+				 configurations.compile.resolvedConfiguration.firstLevelModuleDependencies.each { dep ->
+					 asNode().dependencies[0].dependency.find {
+						 it.artifactId[0].text() == dep.moduleName &&
+								 it.groupId[0].text() == dep.moduleGroup
+					 }.scope[0].value = 'compile'
+				 }
+			 }
+		 }
+	 }
+ }
+ 
+ bintray {
+	 user = System.getenv('BINTRAY_USER')
+	 key = System.getenv('BINTRAY_PASSWORD')
+ 
+	 publications = [ 'Synapticloop' ]
+ 
+	 publish = true
+ 
+	 pkg {
+		 repo = 'maven'
+		 name = 'recipease'
+	 }
+ 
+ }
+ 
+ github {
+	 owner = 'synapticloopltd'
+	 repo = archivesBaseName
+	 if(System.getenv('GITHUB_TOKEN')) {
+		 token = System.getenv('GITHUB_TOKEN')
+	 }
+	 tagName = version
+	 name = version
+	 assets = [
+		 'build/libs/' + archivesBaseName + '-' + version + '-all.jar'
+	 ]
+ }
 
-			groupId 'synapticloop'
-			artifactId 'recipease'
-
-			pom.withXml {
-				configurations.compile.resolvedConfiguration.firstLevelModuleDependencies.each { dep ->
-					asNode().dependencies[0].dependency.find {
-						it.artifactId[0].text() == dep.moduleName &&
-								it.groupId[0].text() == dep.moduleGroup
-					}.scope[0].value = 'compile'
-				}
-			}
-		}
-	}
-}
-
-bintray {
-	user = System.getenv('BINTRAY_USER')
-	key = System.getenv('BINTRAY_PASSWORD')
-
-	publications = [ 'Synapticloop' ]
-
-	publish = true
-
-	pkg {
-		repo = 'maven'
-		name = 'recipease'
-	}
-
-}
-
-github {
-	owner = 'synapticloopltd'
-	repo = archivesBaseName
-	if(System.getenv('GITHUB_TOKEN')) {
-		token = System.getenv('GITHUB_TOKEN')
-	}
-	tagName = version
-	name = version
-	assets = [
-		'build/libs/' + archivesBaseName + '-' + version + '-all.jar'
-	]
-}
-
-build.finalizedBy(project.tasks.documentr)
-build.finalizedBy(project.tasks.shadowJar)
+//assemble.finalizedBy(project.tasks.documentr)
+assemble.finalizedBy(project.tasks.shadowJar)
 
