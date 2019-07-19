@@ -17,7 +17,7 @@ group = 'synapticloop'
 archivesBaseName = 'recipease'
 description = """A recipe book creator from json -> PDF"""
 
-version = '1.2.2'
+version = '1.2.3'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
