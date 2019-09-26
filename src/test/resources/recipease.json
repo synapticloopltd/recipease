@@ -59,7 +59,9 @@
 				{ "import": "sides/glazed-carrots-with-thyme.json" },
 				{ "import": "sides/sweet-potato-gratin.json" },
 				{ "import": "sides/aubergine-parmigiana.json" },
-				{ "import": "sides/miso-marinated-aubergine.json" }
+				{ "import": "sides/miso-marinated-aubergine.json" },
+				{ "import": "sides/smokey-roasted-aubergine-dip.json" },
+				{ "import": "sides/fennel-and-blood-orange-salad.json" }
 			]
 		},
 
