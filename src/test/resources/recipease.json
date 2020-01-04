@@ -97,7 +97,8 @@
 				{ "import": "cakes/carrot-cake.json" },
 				{ "import": "cakes/chocolate-raspberry-loaf-cake.json" },
 				{ "import": "cakes/greek-yogurt-chocolate-cake.json" },
-				{ "import": "cakes/polenta-almond-and-orange-cake.json" }
+				{ "import": "cakes/polenta-almond-and-orange-cake.json" },
+				{ "import": "cakes/tiramisu.json" }
 			]
 		},
 
