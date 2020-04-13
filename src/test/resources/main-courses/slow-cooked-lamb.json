@@ -7,6 +7,13 @@
 		{ "Cost": "Moderate" },
 		{ "Yield": "6 people with spare" }
 	],
+
+	"categories": [
+		"Lamb",
+		"Meat",
+		"Mains"
+	],
+
 	"ingredients": [
 		"2 (red) onions",
 		"1 whole bulb garlic",

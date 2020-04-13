@@ -25,9 +25,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -39,6 +46,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.apache.fop.apps.FOPException;
 import org.apache.fop.apps.Fop;
+import org.apache.fop.apps.FopConfParser;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 import org.json.JSONArray;
@@ -50,7 +58,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import synapticloop.recipease.bean.ConfigBean;
 import synapticloop.recipease.function.FunctionStartsWith;
+import synapticloop.recipease.model.Recipe;
 import synapticloop.recipease.model.Recipease;
+import synapticloop.recipease.model.Section;
 import synapticloop.templar.Parser;
 import synapticloop.templar.exception.FunctionException;
 import synapticloop.templar.exception.ParseException;
@@ -66,6 +76,7 @@ public class Main {
 	private static final String JSON_KEY_TITLE = "title";
 	private static final String JSON_KEY_IMPORT = "import";
 	private static final String JSON_KEY_RECIPES = "recipes";
+	private static final String JSON_KEY_IMAGE = "image";
 
 	private static final String RECIPEASE_TEMPLAR_XML = "src/main/resources/recipease.templar.xml";
 
@@ -98,10 +109,16 @@ public class Main {
 	}
 
 
-	private static void renderPDF(String outputFile, String contents) throws FileNotFoundException, FOPException, TransformerException {
-		FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
+	private static void renderPDF(File baseDirectory, String outputFile, String contents) throws FileNotFoundException, FOPException, TransformerException {
+		URI uri = new File(".").toURI();
+		LOGGER.info("Generating from '" + uri.toString() + "'.");
+		URI uriBaseDirectory = baseDirectory.toURI();
+		LOGGER.info("Setting base directory URI to '" + uriBaseDirectory + "'.");
+		FopFactory fopFactory = FopFactory.newInstance(uriBaseDirectory);
 
-		OutputStream out = new BufferedOutputStream(new FileOutputStream(new File(outputFile)));
+		File file = new File(outputFile);
+		LOGGER.info("Outputting file to '" + file.getAbsolutePath() + "'.");
+		OutputStream out = new BufferedOutputStream(new FileOutputStream(file));
 
 		try {
 			// Step 3: Construct fop with desired output format
@@ -175,17 +192,24 @@ public class Main {
 		// now we need to go through and get all of the import statements
 		File recipeaseFile = new File(jsonFile);
 		JSONObject jsonObject = null;
+		File baseDirectory= null;
 		try {
 			jsonObject = new JSONObject(getFileContents(recipeaseFile));
 
 			// now that we have the JSONObject - go through each of the sections and 
 			// find the import files
-			File baseDirectory = recipeaseFile.getParentFile().getAbsoluteFile();
+			baseDirectory = recipeaseFile.getParentFile().getAbsoluteFile();
 
 			JSONArray sectionsArray = jsonObject.getJSONArray(JSON_KEY_SECTIONS);
 			for (Object section : sectionsArray) {
 				JSONObject sectionObject = (JSONObject)section;
 				LOGGER.info(String.format("Retrieving recipes for '%s'", sectionObject.optString(JSON_KEY_TITLE)));
+				String imageValue = sectionObject.getString(JSON_KEY_IMAGE);
+				if(!imageValue.startsWith("/")) {
+					//					sectionObject.put(JSON_KEY_IMAGE, "file:" + baseDirectory.getAbsolutePath() + "/" + imageValue);
+					//					sectionObject.put(JSON_KEY_IMAGE, "file:./" + imageValue);
+					sectionObject.put(JSON_KEY_IMAGE, baseDirectory.getAbsolutePath() + "/" + imageValue);
+				}
 
 				int recipeOffset = 0;
 				JSONArray recipesArray = sectionObject.getJSONArray(JSON_KEY_RECIPES);
@@ -213,6 +237,57 @@ public class Main {
 			System.exit(-1);
 		}
 
+		// Get a list of all of the essentials, and puth them in order
+		Recipease recipease = null;
+		HashMap<String, List<Recipe>> categoryLookup = new LinkedHashMap<>();
+		Set<String> categorySet = new HashSet<>();
+
+		try {
+			recipease = parseResponse(jsonObject.toString());
+
+			// now we need to go through all of the categories
+			List<Section> sections = recipease.getSections();
+			for (Section section : sections) {
+				List<Recipe> recipes = section.getRecipes();
+				for (Recipe recipe : recipes) {
+					List<String> categories = recipe.getCategories();
+					if(null != categories) {
+						categorySet.addAll(categories);
+					}
+				}
+			}
+
+			List<String> categoryList = new ArrayList<>();
+			Iterator<String> iterator = categorySet.iterator();
+			while (iterator.hasNext()) {
+				categoryList.add(iterator.next());
+			}
+
+			Collections.sort(categoryList);
+			for (String category : categoryList) {
+				categoryLookup.put(category, new ArrayList<>());
+			}
+
+			for (Section section : sections) {
+				List<Recipe> recipes = section.getRecipes();
+				for (Recipe recipe : recipes) {
+					List<String> categories = recipe.getCategories();
+					if(null != categories) {
+						for (String category : categories) {
+							List<Recipe> list = categoryLookup.get(category);
+							list.add(recipe);
+						}
+					}
+				}
+			}
+
+		} catch (IOException ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+			// todo - log something here
+			System.exit(-1);
+		}
+
 		Iterator<String> iterator = OUTPUT_MAP.keySet().iterator();
 		while (iterator.hasNext()) {
 			String outputFile = (String) iterator.next();
@@ -223,12 +298,15 @@ public class Main {
 					templarContext.addFunction("startsWith", new FunctionStartsWith());
 				}
 
-				templarContext.add("recipease", parseResponse(jsonObject.toString()));
+
+				templarContext.add("recipease", recipease);
 				templarContext.add("config", OUTPUT_MAP.get(outputFile));
+				templarContext.add("outputMap", outputFile);
+				templarContext.add("categories", categoryLookup);
 
 				Parser parser = new Parser(new File(RECIPEASE_TEMPLAR_XML));
 
-				renderPDF(outputFile, parser.render(templarContext));
+				renderPDF(baseDirectory, outputFile, parser.render(templarContext));
 			} catch (JSONException | IOException | FOPException | TransformerException | ParseException | RenderException | FunctionException ex) {
 				ex.printStackTrace();
 			}
@@ -238,6 +316,7 @@ public class Main {
 	private static JSONObject parseRecipe(String path, String filename) {
 		try {
 			JSONObject jsonObject = new JSONObject(getFileContents(new File(String.format("%s/%s", path, filename))));
+
 			return(jsonObject);
 		} catch (JSONException | IOException ex) {
 			LOGGER.fatal(String.format("Could not import JSON recipe object '%s'", filename));

@@ -1,5 +1,10 @@
 {
 	"title":"Scones",
+
+	"categories": [
+		"Cakes"
+	],
+
 	"information": [
 		{"Total time":"under 1 hour" },
 		{"Skill level":"easy" },

@@ -1,5 +1,10 @@
 {
 	"title":"Torta Caprese",
+	"categories": [
+		"Almonds",
+		"Chocolate",
+		"Cakes"
+	],
 	"ingredients": [
 
 "200g ground almonds",

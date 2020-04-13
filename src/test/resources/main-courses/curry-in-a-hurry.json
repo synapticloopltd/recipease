@@ -9,6 +9,13 @@
 { "Yield": "Serves 6" }
 
 	],
+
+	"categories": [
+		"Chicken",
+		"Meat",
+		"Mains"
+	],
+
 	"ingredients": [
 
 "2 tablespoons canola or other vegetable oil",

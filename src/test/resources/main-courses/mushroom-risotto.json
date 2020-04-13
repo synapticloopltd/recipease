@@ -7,6 +7,14 @@
 { "Cost": "Moderate" },
 { "Yield": "About ½ pound per serving" }
 	],
+
+	"categories": [
+		"Rice",
+		"Vegetarian",
+		"Mains",
+		"Mushrooms"
+	],
+
 	"ingredients": [
 "400g carnoli rice ",
 "300g unsalted butter",

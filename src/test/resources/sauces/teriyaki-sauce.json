@@ -1,5 +1,11 @@
 {
 	"title":"Teriyaki sauce",
+
+	"categories": [
+		"Chicken",
+		"Sauces"
+	],
+
 	"ingredients": [
 		"½ cup soy sauce",
 		"¼ cup brown sugar",

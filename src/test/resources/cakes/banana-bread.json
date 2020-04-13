@@ -1,5 +1,11 @@
 {
 	"title":"Banana Bread",
+
+	"categories": [
+		"Cakes",
+		"Bananas"
+	],
+
 	"information": [
 		{ "Course": "Side dish" },
 		{"Total time":"under 2 hours" },

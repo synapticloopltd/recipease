@@ -1,17 +1,33 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="Helvetica" font-size="12pt">
 
 <fo:layout-master-set>
-	<fo:simple-page-master margin-right="{config.pageMarginRight}" 
+	<fo:simple-page-master master-name="both" 
+			margin-right="{config.pageMarginRight}" 
 			margin-left="{config.pageMarginLeft}" 
 			margin-bottom="{config.pageMarginBottom}" 
 			margin-top="{config.pageMarginTop}" 
 			page-width="{config.pageWidth}" 
-			page-height="{config.pageHeight}" master-name="both">
+			page-height="{config.pageHeight}">
 
-		<fo:region-body margin-top="{config.regionBodyMarginTop}" margin-bottom="{config.regionBodyMarginBottom}"/>
-		<fo:region-before extent="{config.regionBeforeExtent}"/>
-		<fo:region-after extent="{config.regionAfterExtent}"/>
+		<fo:region-body margin-top="{config.regionBodyMarginTop}" margin-bottom="{config.regionBodyMarginBottom}" />
+		<fo:region-before extent="{config.regionBeforeExtent}" />
+		<fo:region-after extent="{config.regionAfterExtent}" />
 	</fo:simple-page-master>
+
+	<fo:simple-page-master master-name="index" 
+			margin-right="{config.pageMarginRight}" 
+			margin-left="{config.pageMarginLeft}" 
+			margin-bottom="{config.pageMarginBottom}" 
+			margin-top="{config.pageMarginTop}" 
+			page-width="{config.pageWidth}" 
+			page-height="{config.pageHeight}">
+
+		<fo:region-body margin-top="{config.regionBodyMarginTop}" margin-bottom="{config.regionBodyMarginBottom}" column-count="2" />
+		<fo:region-before extent="{config.regionBeforeExtent}" />
+		<fo:region-after extent="{config.regionAfterExtent}" />
+
+	</fo:simple-page-master>
+
 </fo:layout-master-set>
 
 <fo:page-sequence master-reference="both">
@@ -24,9 +40,7 @@
 			<fo:external-graphic content-width="{config.imageWidth}" src="url('{recipease.image}')}"/>
 		</fo:block>
 
-		<fo:block font-size="24pt" 
-				font-weight="bold" 
-				id="top-page">{recipease.title}</fo:block>
+		<fo:block font-size="24pt" font-weight="bold">{recipease.title}</fo:block>
 
 		{if fn:notNull[recipease.subTitle]}
 			<fo:block font-size="16pt" 
@@ -52,25 +66,43 @@
 
 	<fo:flow flow-name="xsl-region-body">
 		<!-- Now for the table of contents -->
-		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm">{recipease.tocTitle}</fo:block>
+		<fo:block font-size="16pt" font-weight="bold" padding-bottom="2mm" id="top-page">{recipease.tocTitle}</fo:block>
 
 		{loop recipease.sections as section}
 
-			<fo:block font-size="14pt" padding-bottom="2mm" padding-top="2mm">
-				<fo:basic-link internal-destination="{section.title}">{section.title}</fo:basic-link>
+			<fo:block font-size="14pt" padding-bottom="2mm" padding-top="2mm" text-align-last="justify">
+				<fo:basic-link internal-destination="{section.title}">
+					{section.title}
+					<fo:leader leader-pattern="rule" />
+				</fo:basic-link>
 			</fo:block>
 
 			{loop section.recipes as recipe}
 				<fo:block text-align-last="justify" start-indent="15pt">
-					<fo:basic-link internal-destination="{sectionStatus.offset}-{recipeStatus.offset}">
+					<fo:basic-link internal-destination="{recipe.id}">
 						{recipe.title}
 						<fo:leader leader-pattern="dots" />
-						<fo:page-number-citation ref-id="{sectionStatus.offset}-{recipeStatus.offset}" />
+						<fo:page-number-citation ref-id="{recipe.id}" />
 					</fo:basic-link>
 				</fo:block>
 			{endloop}
 		{endloop}
- 
+
+		<fo:block font-size="14pt" padding-bottom="2mm" padding-top="2mm" text-align-last="justify">
+			<fo:basic-link internal-destination="index">
+				Index
+				<fo:leader leader-pattern="rule" />
+			</fo:basic-link>
+		</fo:block>
+
+		<fo:block text-align-last="justify" start-indent="15pt">
+			<fo:basic-link internal-destination="index">
+				Index
+				<fo:leader leader-pattern="dots" />
+				<fo:page-number-citation ref-id="index" />
+			</fo:basic-link>
+		</fo:block>
+
 	</fo:flow>
 </fo:page-sequence>
 
@@ -91,10 +123,10 @@
 
 			{loop section.recipes as recipe}
 				<fo:block text-align-last="justify" start-indent="15pt">
-					<fo:basic-link internal-destination="{sectionStatus.offset}-{recipeStatus.offset}">
+					<fo:basic-link internal-destination="{recipe.id}">
 						{recipe.title}
 						<fo:leader leader-pattern="dots" />
-						<fo:page-number-citation ref-id="{sectionStatus.offset}-{recipeStatus.offset}" />
+						<fo:page-number-citation ref-id="{recipe.id}" />
 					</fo:basic-link>
 				</fo:block>
 			{endloop}
@@ -111,7 +143,7 @@
 			{import classpath:/recipease.footer.xml}
 
 			<fo:flow flow-name="xsl-region-body">
-				<fo:block font-size="18pt" font-weight="bold" id="{sectionStatus.offset}-{recipeStatus.offset}">{recipe.title}</fo:block>
+				<fo:block font-size="18pt" font-weight="bold" id="{recipe.id}">{recipe.title}</fo:block>
 
 				<fo:block padding-bottom="9mm">
 					<fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt"/>
@@ -236,6 +268,31 @@
 			</fo:flow>
 		</fo:page-sequence>
 	{endloop}
+
 {endloop}
+
+<fo:page-sequence master-reference="index">
+	{import classpath:/recipease.footer.xml}
+
+	<fo:flow flow-name="xsl-region-body">
+		<fo:block font-size="24pt" font-weight="bold" id="index" span="all" border-bottom-width="2pt" border-bottom-color="black" border-bottom="solid" margin-bottom="10pt" >Index</fo:block>
+
+		{loop categories as category}
+			<fo:block font-size="18pt" font-weight="bold" padding-bottom="2mm" padding-top="2mm">{category}</fo:block>
+
+			{loop categories.$category as recipe}
+				<fo:block text-align-last="justify" start-indent="15pt">
+					<fo:basic-link internal-destination="{recipe.id}">
+						{recipe.title}
+						<fo:leader leader-pattern="dots" />
+						<fo:page-number-citation ref-id="{recipe.id}" />
+					</fo:basic-link>
+				</fo:block>
+			{endloop}
+
+		{endloop}
+	</fo:flow>
+
+</fo:page-sequence>
 
 </fo:root>

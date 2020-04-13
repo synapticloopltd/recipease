@@ -7,6 +7,13 @@
 { "Cost": "Moderate" },
 { "Yield": "About ½ pound per serving" }
 	],
+
+	"categories": [
+		"Mains",
+		"Meat",
+		"Ham"
+	],
+
 	"ingredients": [
 "1 ham",
 "1 cup brown sugar",

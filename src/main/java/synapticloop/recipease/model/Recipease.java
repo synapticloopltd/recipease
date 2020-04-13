@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import synapticloop.util.simplelogger.Logger;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-
 public class Recipease {
 	private static Logger LOGGER = Logger.getLoggerSimpleName(Recipease.class);
 

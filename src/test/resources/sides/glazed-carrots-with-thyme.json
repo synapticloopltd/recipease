@@ -7,6 +7,14 @@
 { "Yield": "makes 4 servings" } 
 
 	],
+
+	"categories": [
+		"Sides",
+		"Carrots",
+		"Vegetarian"
+		
+	],
+
 	"ingredients": [
 
 "1lb (450g) carrots, thinly sliced",

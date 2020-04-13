@@ -1,0 +1,43 @@
+{
+	"title":"Onion Rings",
+	
+	"categories": [
+		"Onions",
+		"Sides",
+		"Vegetarian"
+		
+	],
+
+	"information": [
+		{ "Serves": "20 onion rings" },
+		{ "Prep time": "15 minutes" },
+		{ "Cooking time": "15 minutes" },
+		{ "Total time": "30 min" }
+	],
+
+	"ingredients": [
+		"1 Onion",
+		"1/2 cup of All Purpose Flour",
+		"1 Tablespoon of Baking Powder",
+		"1 Tablespoon of Smoked Paprika (optional)",
+		"1 Egg",
+		"3/4 cup of Milk",
+		"1 teaspoon of ground pepper",
+		"1 teaspoon of table salt",
+		"Bread Crumbs to coat",
+		"Canola Oil for frying"
+	],
+
+	"directions": [
+
+		"Rinse the onion and cut into approximately 1/2 cm rings",
+		"Carefully separate the rings from each other (setting aside the smaller ones for other recipes)",
+		"Combine the flour, baking powder, salt and paprika in a medium bowl.",
+		"Coat each onion ring in the flour mixture and set aside",
+		"Combine the remaining flour mixture that you coated the onions with, with the milk, egg, and salt and beat well until no lumps remain",
+		"Coat each onion ring in the above mixture and shake away the excess",
+		"Coat each onion ring in breadcrumbs",
+		"Fry the onion rings in a fryer or a pot with oil."
+
+	]
+}

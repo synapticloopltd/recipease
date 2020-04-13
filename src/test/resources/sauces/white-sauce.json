@@ -1,5 +1,10 @@
 {
 	"title":"White Sauce",
+
+	"categories": [
+		"Sauces"
+	],
+
 	"ingredients": [
 		"25g/1oz butter",
 		"25g/1oz plain flour",

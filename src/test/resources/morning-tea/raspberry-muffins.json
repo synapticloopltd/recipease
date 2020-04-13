@@ -1,5 +1,11 @@
 {
 	"title":"Raspberry Muffins",
+
+	"categories": [
+		"Cakes",
+		"Raspberries"
+	],
+
 	"information": [
 		{"Serves":"12" },
 		{"Cooking time":"30 minutes" },

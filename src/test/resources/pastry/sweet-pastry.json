@@ -2,6 +2,11 @@
 	"title":"Sweet Pastry",
 	"information": [
 	],
+
+	"categories": [
+		"Pastry"
+	],
+
 	"ingredients": [
 		"220g Sugar",
 		"310g butter",

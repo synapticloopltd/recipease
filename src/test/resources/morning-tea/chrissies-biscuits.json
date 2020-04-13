@@ -1,5 +1,11 @@
 {
 	"title":"Chrissie's Biscuits",
+
+	"categories": [
+		"Biscuits",
+		"Chocolate"
+	],
+
 	"ingredients": [
 		"90g of coconut oil",
 		"3 tablespoons of brown rice syrup or maple syrup",

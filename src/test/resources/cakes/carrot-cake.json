@@ -1,35 +1,39 @@
 {
 	"title":"Carrot Cake",
-	"ingredients": [
 
-"§For the cake",
-"3 eggs",
-"1 cup of sugar",
-"1/2 cup olive oil",
-"1 and 1/3 cups of plain flour",
-"1 and 1/3 teaspoons cinnamon",
-"1 and 1/3 teaspoons nutmeg",
-"1 and 1/3 teaspoons bi-carb of soda",
-"1 and 1/3 teaspoons baking flour",
-"2 cups of grated carrots (about 250 gr)",
-"1/2 cup of chopped walnuts",
-"1 teaspoon of vanilla essence",
-"§For the icing",
-"4 oz cream cheese (Philly)",
-"3 tablespoons butter (45 gr)",
-"1/2 lb icing sugar ",
-"1 teaspoon vanilla essence"
+	"categories": [
+		"Carrots",
+		"Cakes"
 	],
+
+	"ingredients": [
+		"§For the cake",
+		"3 eggs",
+		"1 cup of sugar",
+		"1/2 cup olive oil",
+		"1 and 1/3 cups of plain flour",
+		"1 and 1/3 teaspoons cinnamon",
+		"1 and 1/3 teaspoons nutmeg",
+		"1 and 1/3 teaspoons bi-carb of soda",
+		"1 and 1/3 teaspoons baking flour",
+		"2 cups of grated carrots (about 250 gr)",
+		"1/2 cup of chopped walnuts",
+		"1 teaspoon of vanilla essence",
+		"§For the icing",
+		"4 oz cream cheese (Philly)",
+		"3 tablespoons butter (45 gr)",
+		"1/2 lb icing sugar ",
+		"1 teaspoon vanilla essence"
+	],
+
 	"directions": [
-
-"beat eggs and sugar well until fluffy",
-"add olive oil and beat",
-"Next you need to get 1 and 1/3 cups of plain flour, 1 and 1/3 teaspoons cinnamon, nutmeg, bi-carb soda and baking flour and ",
-"sift cinnamon, nutmeg, bi-carb of soda, baking flour into mixture and combine",
-"then add grated carrots, chopped walnuts and vanilla, mix it all up and it is done.  ",
-"Cook this mixture in 2 loaf tins at 170 fan forced - for about 30 minutes depends on your oven but you can't kill it, You will smell it.",
-"Check with a skewer!!",
-"To ice the cake, mix all of the ingredients together well"
-
+		"beat eggs and sugar well until fluffy",
+		"add olive oil and beat",
+		"Next you need to get 1 and 1/3 cups of plain flour, 1 and 1/3 teaspoons cinnamon, nutmeg, bi-carb soda and baking flour and ",
+		"sift cinnamon, nutmeg, bi-carb of soda, baking flour into mixture and combine",
+		"then add grated carrots, chopped walnuts and vanilla, mix it all up and it is done.  ",
+		"Cook this mixture in 2 loaf tins at 170 fan forced - for about 30 minutes depends on your oven but you can't kill it, You will smell it.",
+		"Check with a skewer!!",
+		"To ice the cake, mix all of the ingredients together well"
 	]
 }

@@ -9,6 +9,14 @@
 { "Yield": "Serves 10 to 12" }
 
 	],
+
+	"categories": [
+		"Turkey",
+		"Meat",
+		"Mains"
+	],
+
+
 	"ingredients": [
 
 "12 – to 14–pound turkey",

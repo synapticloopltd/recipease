@@ -1,5 +1,10 @@
 {
 	"title":"Anzac Biscuits",
+
+	"categories": [
+		"Biscuits"
+	],
+
 	"ingredients": [
 		"85g porridge oats",
 		"85g desiccated coconut",

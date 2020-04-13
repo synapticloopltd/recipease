@@ -18,6 +18,8 @@ package synapticloop.recipease.model;
 
 import java.util.List;
 
+import org.hashids.Hashids;
+
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,12 +30,22 @@ import synapticloop.util.simplelogger.Logger;
 
 public class Recipe {
 	private static Logger LOGGER = Logger.getLoggerSimpleName(Recipe.class);
+	private static final Hashids hashids = new Hashids("this is my salt");
+	private static long genId = 0l;
+
+	private String id = null;
+
+	public Recipe() {
+		id = hashids.encode(genId);
+		genId++;
+	}
 
 	@JsonProperty("title") private String title = "I never knew what to call this...";
 	@JsonProperty("ingredients") private List<String> ingredients;
 	@JsonProperty("directions") private List<String> directions;
 	@JsonProperty("information") private List<Information> information;
 	@JsonProperty("notes") private List<String> notes;
+	@JsonProperty("categories") private List<String> categories;
 
 	@JsonAnySetter
 	public void setAdditionalProperty(String name, Object value) {
@@ -45,5 +57,6 @@ public class Recipe {
 	public List<String> getDirections() { return this.directions; }
 	public List<Information> getInformation() { return this.information; }
 	public List<String> getNotes() { return this.notes; }
-
+	public List<String> getCategories() { return(this.categories); }
+	public String getId() { return(this.id); }
 }

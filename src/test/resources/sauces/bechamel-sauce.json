@@ -1,5 +1,11 @@
 {
 	"title":"Bechamel Sauce",
+
+	"categories": [
+		"Sauces"
+	],
+
+
 	"ingredients": [
 		"15fl oz/425ml milk",
 		"a few parsley stalks",
@@ -11,6 +17,7 @@
 		"20g plain flour",
 		"salt and freshly milled black pepper"
 		],
+
 	"directions": [
 
 "First place the milk in a small saucepan and add the parsley stalks, bay leaf, mace (if using), peppercorns and onion. ",

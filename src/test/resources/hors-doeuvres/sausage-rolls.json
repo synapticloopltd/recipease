@@ -8,6 +8,13 @@
 { "Yield": "24 rolls" }
 
 	],
+
+	"categories": [
+		"Hors D'Oeuvres",
+		"Pork",
+		"Meat"
+	],
+
 	"ingredients": [
 
 "½ package thawed frozen puff pastry",

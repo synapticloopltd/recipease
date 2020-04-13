@@ -7,6 +7,13 @@
 		{"Cost":"inexpensive" },
 		{"Yield":"makes 4 servings" }
 	],
+
+	"categories": [
+		"Apples",
+		"Pork",
+		"Sauces"
+	],
+
 	"ingredients": [
 		"1lb 2oz (500g) sweet dessert apples, such as Golden Delicious or McIntosh",
 		"2 tbsp sugar",

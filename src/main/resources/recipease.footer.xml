@@ -3,9 +3,9 @@
   -->
 <fo:static-content flow-name="xsl-region-after">
 	<fo:block><fo:leader leader-pattern="rule" leader-length="100%" rule-style="solid" rule-thickness="2pt" /></fo:block>
-	<fo:block text-align-last="center" font-size="10pt" font-style="italic">
-		<fo:basic-link internal-destination="top-page">{recipease.title}</fo:basic-link>
-	</fo:block>
-	<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">§§</fo:block>
+	<fo:block text-align-last="center" font-size="10pt" font-style="italic">{recipease.title}</fo:block>
+	<fo:block text-align-last="center" font-size="14pt" padding-top="3mm" font-weight="bold">
+		<fo:basic-link internal-destination="top-page">~§ Table Of Contents §~</fo:basic-link>
+		</fo:block>
 	<fo:block text-align-last="center" font-size="10pt" padding-top="3mm"><fo:page-number/></fo:block>
 </fo:static-content>

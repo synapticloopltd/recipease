@@ -1,5 +1,12 @@
 {
 	"title":"Peanut Sauce",
+
+	"categories": [
+		"Peanuts",
+		"Sauces",
+		"Chicken"
+	],
+
 	"ingredients": [
 		"2 tbsp groundnut or sunflower oil",
 		"2 shallot, finely chopped",

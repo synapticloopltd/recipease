@@ -1,5 +1,10 @@
 {
 	"title":"Cheese Soufflé",
+	"categories": [
+		"Cheese",
+		"Eggs",
+		"Entrees"
+	],
 	"information": [
 		{"Course":"side dish" },
 		{"Total time":"under 1 hour" },

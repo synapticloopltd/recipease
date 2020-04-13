@@ -1,5 +1,8 @@
 {
 	"title":"Pancakes",
+	"categories": [
+		"Breakfast"
+	],
 	"information": [
 		{"Course":"breakfast" },
 		{"Time":"under 30 minutes" },

@@ -6,6 +6,13 @@
 		{"Skill level":"easy" },
 		{"Cost":"inexpensive" }
 	],
+
+	"categories": [
+		"Sauces",
+		"Burgers"
+		
+	],
+
 	"ingredients": [
 		" 1/2 cup whole egg mayonnaise",
 		"1 tbsp sweet tomato relish",

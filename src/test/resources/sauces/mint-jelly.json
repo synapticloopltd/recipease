@@ -1,5 +1,13 @@
 {
 	"title":"Mint jelly",
+
+	"categories": [
+		"Apples",
+		"Mint",
+		"Lamb",
+		"Sauces"
+	],
+
 	"ingredients": [
 		"4 lbs of tart apples (e.g. Granny Smith), un-peeled, chopped into big pieces, including the cores (including the cores is important as this is where most of the natural pectin is)",
 		"1 1/2 cups of fresh mint, chopped, lightly packed",

@@ -1,5 +1,15 @@
 {
 	"title":"Puree of Potato and Celeriac",
+
+	"categories": [
+		"Potatoes",
+		"Celeriac",
+		"Sides",
+		"Vegetarian"
+		
+	],
+
+
 	"ingredients": [
 "1 lb (450 g) potatoes",
 "2 lb (1 kg) celeriac",

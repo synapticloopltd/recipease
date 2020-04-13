@@ -10,6 +10,15 @@
 "extra virgin olive oil/butter"
 
 	],
+
+	"categories": [
+		"Ricotta",
+		"Semolina",
+		"Vegetarian",
+		"Pasta",
+		"Mains"
+	],
+
 	"directions": [
 
 "Strain the ricotta in a sieve until no more liquid comes out.",
