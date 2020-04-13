@@ -64,7 +64,8 @@
 			"title": "Salads",
 			"image": "images/salads.jpg", 
 			"recipes": [
-				{ "import": "salads/fennel-and-blood-orange-salad.json" }
+				{ "import": "salads/fennel-and-blood-orange-salad.json" },
+				{ "import": "salads/classic-coleslaw.json" }
 			]
 		},
 
