@@ -1,13 +1,11 @@
 {
 	"title":"Curry in a Hurry",
 	"information": [
-
-{ "Course": "main course" },
-{ "Total time": "under 30 minutes" },
-{ "Skill level": "Easy" },
-{ "Cost": "Inexpensive" },
-{ "Yield": "Serves 6" }
-
+		{ "Course": "main course" },
+		{ "Total time": "under 30 minutes" },
+		{ "Skill level": "Easy" },
+		{ "Cost": "Inexpensive" },
+		{ "Yield": "Serves 6" }
 	],
 
 	"categories": [
@@ -17,26 +15,25 @@
 	],
 
 	"ingredients": [
-
-"2 tablespoons canola or other vegetable oil",
-"3 tablespoons finely chopped scallions",
-"3–4 tablespoons green Thai curry paste",
-"2 lbs chicken thigh fillets, cut into strips about 1 1/2 inches by 3/4 inch",
-"1 14-oz can coconut milk",
-"1 cup boiling water",
-"enough chicken stock from bouillon or concentrate to make 2 cups",
-"1 tablespoon fish sauce",
-"1 1/2 cups frozen peas",
-"1 1/2 cups frozen soybeans",
-"1 1/2 cups frozen slender beans",
-"3 tablespoons chopped fresh cilantro",
-"cooked rice or noodles, to serve lime wedges"
-
+		"2 tablespoons canola or other vegetable oil",
+		"3 tablespoons finely chopped scallions",
+		"3–4 tablespoons green Thai curry paste",
+		"2 lbs chicken thigh fillets, cut into strips about 1 1/2 inches by 3/4 inch",
+		"1 14-oz can coconut milk",
+		"1 cup boiling water",
+		"enough chicken stock from bouillon or concentrate to make 2 cups",
+		"1 tablespoon fish sauce",
+		"1 1/2 cups frozen peas",
+		"1 1/2 cups frozen soybeans",
+		"1 1/2 cups frozen slender beans",
+		"3 tablespoons chopped fresh cilantro",
+		"cooked rice or noodles, to serve lime wedges"
 	],
+
 	"directions": [
-"Heat the oil in a large saucepan, one that owns a lid, and drop in the scallions. Cook, stirring for a minute or two, and then add the curry paste",
-"Add the chicken pieces and keep turning over heat for 2 minutes before adding the coconut milk, stock (or rather water and chicken bouillon or concentrate), and fish sauce, and then the frozen peas and soybeans.",
-"Simmer for 10 minutes, then add the frozen beans and cook for another 3–5 minutes.",
-"Serve with rice or noodles, as wished, sprinkling over the cilantro as you do so. Put a plate of lime wedges for people to squeeze over as they eat."
+		"Heat the oil in a large saucepan, one that owns a lid, and drop in the scallions. Cook, stirring for a minute or two, and then add the curry paste",
+		"Add the chicken pieces and keep turning over heat for 2 minutes before adding the coconut milk, stock (or rather water and chicken bouillon or concentrate), and fish sauce, and then the frozen peas and soybeans.",
+		"Simmer for 10 minutes, then add the frozen beans and cook for another 3–5 minutes.",
+		"Serve with rice or noodles, as wished, sprinkling over the cilantro as you do so. Put a plate of lime wedges for people to squeeze over as they eat."
 	]
 }

@@ -28,6 +28,7 @@ import java.io.StringReader;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -276,6 +277,13 @@ public class Main {
 						for (String category : categories) {
 							List<Recipe> list = categoryLookup.get(category);
 							list.add(recipe);
+							Collections.sort(list, new Comparator<Recipe>() {
+
+								@Override
+								public int compare(Recipe recipe1, Recipe recipe2) {
+									return(recipe1.getTitle().compareTo(recipe2.getTitle()));
+								}
+							});
 						}
 					}
 				}

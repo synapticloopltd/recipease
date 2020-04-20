@@ -1,5 +1,5 @@
 {
-	"title":"Big Mac Sauce",
+	"title":"Burger Sauce",
 	"information": [
 		{"Course":"side dish" },
 		{"Total time":"under 30 minutes" },
@@ -10,7 +10,6 @@
 	"categories": [
 		"Sauces",
 		"Burgers"
-		
 	],
 
 	"ingredients": [
@@ -21,10 +20,12 @@
 		"1 tsp garlic powder",
 		"1 tsp onion powder",
 		"1 tsp sweet paprika"
-		],
+	],
+
 	"directions": [
 		"Place all ingredients in a large bowl and mix together"
 	],
+
 	"notes": [
 		"Try swapping out the tomato relish for gherkin relish"
 	]

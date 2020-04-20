@@ -1,5 +1,6 @@
 {
 	"title":"Slow Cooked Leg of Lamb",
+
 	"information": [
 		{ "Course": "main course" },
 		{ "Total time": "around 5 hours" },
@@ -25,6 +26,7 @@
 		"1/2 a bunch of fresh thyme",
 		"1 cup chicken stock"
 	],
+
 	"directions": [
 		"Preheat the oven to 200ºC/400ºF/gas 6.",
 		"Peel and quarter the onions and garlic cloves, peel and roughly chop the carrots.",
@@ -35,6 +37,7 @@
 		"Cover the tray tightly with a double layer of tin foil and place in the oven. Turn down the oven temperature to 170ºC/325ºF/gas 3 and cook for 3½ to 4 hours, or until the lamb is soft, melting and sticky and you can pull it apart with a fork.",
 		"Gently break up the meat, pull out the ones, and extract any herb stalks. Squeeze the garlic out of the skins and mush it in. Shred the lamb, check the seasoning and serve with some crispy roast potatoes."
 	],
+
 	"notes": [
 		"You may need to adjust the cooking time dependent on the weight of the lamb"
 	]

@@ -1,9 +1,8 @@
 {
 	"title":"Lasagne",
+
 	"ingredients": [
-
-"Get good Italian dry sheets; no pre-cooking."
-
+		"Get good Italian dry sheets; no pre-cooking."
 	],
 
 	"categories": [
@@ -14,22 +13,19 @@
 	],
 
 	"directions": [
-
-"§Assembly layers:",
-"Half the Bolognese sauce, then",
-"A layer of lasagne sheets – cut pieces to fit to the edges of the dish; don’t overlap layers, then",
-"Half the while sauce, then",
-"The rest of the Bolognese sauce, then",
-"Another layer of lasagne sheets, then",
-"The rest of the while sauce.",
-"Grate mature cheddar cheese on top.",
-"Cook for about ½ hour at about 200 degrees C"
-
+		"§Assembly layers:",
+		"Half the Bolognese sauce, then",
+		"A layer of lasagne sheets – cut pieces to fit to the edges of the dish; don’t overlap layers, then",
+		"Half the while sauce, then",
+		"The rest of the Bolognese sauce, then",
+		"Another layer of lasagne sheets, then",
+		"The rest of the while sauce.",
+		"Grate mature cheddar cheese on top.",
+		"Cook for about 1/2 hour at about 200 degrees C"
 	],
+
 	"notes": [
-
-"You will need a white sauce and bolognese sauce as well to cook this",
-"There is some evidence that preparing in advance of cooking (eg leave for an hour after preparation) enhances the flavour"
-
+		"You will need a white sauce and bolognese sauce as well to cook this",
+		"There is some evidence that preparing in advance of cooking (eg leave for an hour after preparation) enhances the flavour"
 	]
 }

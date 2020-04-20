@@ -1,12 +1,11 @@
 {
 	"title":"Sweet Potato Gratin",
+
 	"information": [
-
-{ "Serves": "4 – 6" },
-{ "Prep time": "15 minutes" },
-{ "Cooking time": "70 minutes total" },
-{ "Total time": "1 hr 25 min" }
-
+		{ "Serves": "4 – 6" },
+		{ "Prep time": "15 minutes" },
+		{ "Cooking time": "70 minutes total" },
+		{ "Total time": "1 hr 25 min" }
 	],
 
 	"categories": [
@@ -16,29 +15,25 @@
 	],
 
 	"ingredients": [
-
-"6 medium sweet potatoes (about 1.5kg in total)",
-"5 tablespoons sage leaves, roughly chopped (plus some extra to garnish)",
-"6 garlic cloves, crushed",
-"2 teaspoons coarse sea salt",
-"1/2 teaspoon fresh ground black pepper",
-"250 ml whipping cream"
-
+		"6 medium sweet potatoes (about 1.5kg in total)",
+		"5 tablespoons sage leaves, roughly chopped (plus some extra to garnish)",
+		"6 garlic cloves, crushed",
+		"2 teaspoons coarse sea salt",
+		"1/2 teaspoon fresh ground black pepper",
+		"250 ml whipping cream"
 	],
+
 	"directions": [
-
-"Preheat the oven to 200ºC.",
-"Wash the sweet potatoes (do not peel them) and cut them into discs 5mm thick.",
-"In a bowl, mix together the sweet potatoes, sage, garlic, salt and pepper.",
-"Arrange the slices of sweet potato in a deep, medium-sized ovenproof dish by taking tight packs of them and standing them up next to each other.",
-"They should fit together quite tightly so you get parallel lines of sweet potato slices (skins showing) along the length or width of the dish.",
-"Throw any remaining bits of garlic or sage from the bowl over the potatoes.",
-"Cover the dish with foil, place in the oven and roast for 45 minutes.",
-"Remove the foil and pour the cream evenly over the potatoes.",
-"Roast, uncovered, for a further 25 minutes. The cream should thicken.",
-"Stick a sharp knife in different places in the dish to make sure the potatoes are completely soft",
-"Serve immediately, garnished with sage, or leave to cool down."
-
-
+		"Preheat the oven to 200ºC.",
+		"Wash the sweet potatoes (do not peel them) and cut them into discs 5mm thick.",
+		"In a bowl, mix together the sweet potatoes, sage, garlic, salt and pepper.",
+		"Arrange the slices of sweet potato in a deep, medium-sized ovenproof dish by taking tight packs of them and standing them up next to each other.",
+		"They should fit together quite tightly so you get parallel lines of sweet potato slices (skins showing) along the length or width of the dish.",
+		"Throw any remaining bits of garlic or sage from the bowl over the potatoes.",
+		"Cover the dish with foil, place in the oven and roast for 45 minutes.",
+		"Remove the foil and pour the cream evenly over the potatoes.",
+		"Roast, uncovered, for a further 25 minutes. The cream should thicken.",
+		"Stick a sharp knife in different places in the dish to make sure the potatoes are completely soft",
+		"Serve immediately, garnished with sage, or leave to cool down."
 	]
 }
