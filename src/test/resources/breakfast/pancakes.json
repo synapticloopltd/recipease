@@ -1,8 +1,10 @@
 {
 	"title":"Pancakes",
+
 	"categories": [
 		"Breakfast"
 	],
+
 	"information": [
 		{"Course":"breakfast" },
 		{"Time":"under 30 minutes" },
@@ -10,6 +12,7 @@
 		{"Cost":"inexpensive" },
 		{"Yield":"about 16 3-inch pancakes" }
 	],
+
 	"ingredients": [
 		"½ stick (4 Tablespoons) butter 60 gram",
 		"1 cup milk",
@@ -23,6 +26,7 @@
 		"Butter at Room Temperature",
 		"Maple Syrup"
 	],
+
 	"directions": [
 		"If your butter is very cold, cut it into 4 or 5 pieces so it will melt more quickly in the milk. Put the butter and 1 cup milk into a small saucepan and set the saucepan on a stove burner. Turn the heat on to medium. It will only take a minute or two for the milk to get hot enough to melt the butter, so stay by the stove, watch, and stir the milk mixture often. When the milk is hot and the butter is melted, take the saucepan off the burner and let the mixture cool a little.",
 		"Crack the 2 eggs into a mixing bowl. Beat the eggs together with a fork until the yolks and whites are blended and the eggs become all yellow. Before you add the milk and butter to the eggs, be sure the mixture has cooled. Test it by poking your finger quickly in and out of the saucepan to check. If the mixture is barely warm, add it to the eggs. If it is still hot, let it cool a little longer and then add it to the eggs. Stir the eggs and milk mixture together.",
@@ -32,6 +36,7 @@
 		"As the pancake cooks, watch for tiny bubbles forming on the top and sides, When you see the bubbles all over the topside, this usually means the pancake is ready to turn over. Slide a metal spatula under the pancake and gently turn it over. It should look golden on top. If it looks very brown, turn the heat down a little. Let it cook a few more seconds, then slide the metal spatula again under the pancake, and lift the edge up so you can look and see if the bottom is golden. If it is, remove the pancake from the skillet onto a plate and cut into the middle. If it isnʼt runny it is done.",
 		"Now you are ready to get serious about making your pancakes. Have everything ready to go—butter, syrup, plates, knives, forks napkins—so you can make 3 or 4 pancakes at one time, which is a good serving for each person. Make the pancakes just as you did with the test pancake, this time dropping 3 or 4 large spoonfuls (one at a time) of the batter around the pan, not touching As you remove the pancakes from the skillet, serve them immediately and finally serve yourself. Then you can make more pancakes for those with hearty appetites. Or your friends can take a turn at being a cook and try their hand at making pancakes."
 	],
+
 	"notes": [
 		"Springle brown sugar over the pancakes and then drizzle lemon juice over it for a sweet 'n' sour taste sensation!"
 	]

@@ -1,12 +1,13 @@
 {
 	"title":"Greek Yogurt Chocolate cake",
+
 	"categories": [
 		"Greek Yoghurt",
 		"Chocolate",
 		"Cakes"
 	],
-	"ingredients": [
 
+	"ingredients": [
 		"§For the cake",
 		"235g all-purpose flour",
 		"300g granulated sugar",
@@ -29,18 +30,16 @@
 		"1/3 cup Half and Half",
 		"1/2 teaspoon salt",
 		"2 teaspoons vanilla"
-
 	],
+
 	"directions": [
-
-"§The cake",
-"Pre-heat oven to 180 Degrees C",
-"mix all wet ingredients together",
-"mix all of the dry ingredients together",
-"add dry ingredients to the wet ingredients",
-"Cook for 50mins check regularly with skewer...",
-"§The icing",
-"mix all of the ingredients together"
-
+		"§The cake",
+		"Pre-heat oven to 180 Degrees C",
+		"mix all wet ingredients together",
+		"mix all of the dry ingredients together",
+		"add dry ingredients to the wet ingredients",
+		"Cook for 50mins check regularly with skewer...",
+		"§The icing",
+		"mix all of the ingredients together"
 	]
 }

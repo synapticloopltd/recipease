@@ -5,6 +5,7 @@
 		"Eggs",
 		"Entrees"
 	],
+
 	"information": [
 		{"Course":"side dish" },
 		{"Total time":"under 1 hour" },
@@ -12,6 +13,7 @@
 		{"Cost":"inexpensive" },
 		{"Yield":"makes 6-8 servings" }
 	],
+
 	"ingredients": [
 		"30g/1oz butter, plus extra for buttering soufflé dish",
 		"30g/1oz plain flour ('00' if possible)",
@@ -21,7 +23,8 @@
 		"4 eggs, 4 whites and 2 yolks",
 		"85g/3oz grated cheese (I use gruyère, but you can use any hard cheese)",
 		"salt and pepper"
-		],
+	],
+
 	"directions": [
 		"Preheat the oven on to 200C/400F/Gas 6.",
 		"Heat the milk until just below boiling.",

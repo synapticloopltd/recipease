@@ -13,6 +13,7 @@
 		{"Cost":"inexpensive" },
 		{"Yield":"makes 8 servings" }
 	],
+
 	"ingredients": [
 		"1¾ cups all-purpose flour",
 		"1½ tsp baking powder",
@@ -22,7 +23,8 @@
 		"½ cup plain low-fat yogurt",
 		"2 large eggs",
 		"¾ cup walnuts, chopped"
-		],
+	],
+
 	"directions": [
 		"Preheat the oven to 350°F (180°C). Butter the loaf pan and line the bottom with wax paper. Sift the flour and baking powder together into a bowl. Add the butter and use your fingertips to rub it in until the mixture resembles bread crumbs. Stir in the sugar.",
 		"Mash the bananas with a fork - you should have 1 cup. Add the bananas, yogurt, and eggs to the flour mixture and stir until combined. Stir in the walnuts. Spread in the pan.",

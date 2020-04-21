@@ -1,33 +1,32 @@
 {
 	"title":"Polenta, almond &amp; orange cake",
+
 	"categories": [
 		"Oranges",
 		"Almonds",
 		"Polenta",
 		"Cakes"
 	],
+
 	"ingredients": [
-
-"450g unsalted butter",
-"450g caster sugar",
-"450g ground almonds (blitz whole almonds for better texture)",
-"2tsp vanilla essence",
-"6 eggs",
-"zest of 4 oranges",
-"juice of 1 orange",
-"225g polenta flour",
-"1½ tsp baking powder",
-"¼ tsp salt"
-
+		"450g unsalted butter",
+		"450g caster sugar",
+		"450g ground almonds (blitz whole almonds for better texture)",
+		"2tsp vanilla essence",
+		"6 eggs",
+		"zest of 4 oranges",
+		"juice of 1 orange",
+		"225g polenta flour",
+		"1½ tsp baking powder",
+		"¼ tsp salt"
 	],
+
 	"directions": [
-
-"Pre heat oven to 160c",
-"beat butter andsugar until pale and light",
-"stir in almonds and vanilla",
-"beat in the eggs one at a time",
-"fold in juice, zest, polenta, baking powder and salt",
-"spoon into prepped tin and bake for 50 mins"
-
+		"Pre heat oven to 160c",
+		"beat butter andsugar until pale and light",
+		"stir in almonds and vanilla",
+		"beat in the eggs one at a time",
+		"fold in juice, zest, polenta, baking powder and salt",
+		"spoon into prepped tin and bake for 50 mins"
 	]
 }
