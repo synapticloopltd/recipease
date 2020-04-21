@@ -103,7 +103,8 @@
 				{ "import": "main-courses/lasagne.json" },
 				{ "import": "main-courses/mushroom-risotto.json" },
 				{ "import": "main-courses/roast-turkey-with-pan-gravy.json" },
-				{ "import": "main-courses/slow-cooked-lamb.json" }
+				{ "import": "main-courses/slow-cooked-lamb.json" },
+				{ "import": "main-courses/swedish-meatballs.json" }
 			]
 		},
 
