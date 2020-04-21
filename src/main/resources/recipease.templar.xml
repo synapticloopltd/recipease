@@ -240,7 +240,7 @@
 								{if fn:and[fn:startsWith["§", direction], !directionStatus.first}
 									</fo:list-block>
 
-									<fo:block padding-bottom="5mm" padding-top="2mm" font-weight="bold">{fn:substring[direction, "1"]}</fo:block>
+									<fo:block padding-bottom="5mm" start-indent="5mm" padding-top="2mm" font-weight="bold">{fn:substring[direction, "1"]}</fo:block>
 
 									<fo:list-block>
 								{else}
