@@ -17,7 +17,7 @@ group = 'synapticloop'
 archivesBaseName = 'recipease'
 description = """A recipe book creator from json -> PDF"""
 
-version = '1.2.4'
+version = '1.2.6'
 
 sourceCompatibility = 1.9
 targetCompatibility = 1.9
@@ -40,7 +40,7 @@ dependencies {
 	implementation 'org.json:json:20190722'
 	implementation 'synapticloop:simplelogger:2.0.0'
 	implementation 'synapticloop:simpleusage:1.1.2'
-	implementation 'org.apache.xmlgraphics:xmlgraphics-commons:2.3'
+	implementation 'org.apache.xmlgraphics:xmlgraphics-commons:2.4'
 	implementation 'org.apache.xmlgraphics:fop:2.4'
 	implementation 'synapticloop:templar:1.5.0'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9.1'
@@ -57,7 +57,7 @@ configurations.all {
 		force 'org.slf4j:slf4j-api:1.7.13',
 					'xml-apis:xml-apis:2.0.2',
 					'org.json:json:20190722',
-					'org.apache.xmlgraphics:xmlgraphics-commons:2.3',
+					'org.apache.xmlgraphics:xmlgraphics-commons:2.4',
 					'commons-logging:commons-logging:1.2'
 
 		eachDependency {

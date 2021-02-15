@@ -1,0 +1,40 @@
+{
+	"title":"Cheese Biscuits",
+
+	"information": [
+		{"Course":"Biscuits" },
+		{"Total time":"30 minutes to prepare, 1 hour to chill" },
+		{"Skill level":"easy" },
+		{"Cost":"inexpensive" }
+	],
+
+	"categories": [
+		"Biscuits",
+		"Cheese",
+		"Dairy"
+	],
+
+	"ingredients": [
+		"35g self raising flour",
+		"250g plain flour",
+		"237g salted butter",
+		"250g Tasty cheese (mature cheddar) finely grated",
+		"187g powdered parmesan",
+		"pinch cayenne pepper",
+		"1/2 lemon - juiced"
+	],
+
+	"directions": [
+		"Mix flours and butter in a mixmaster on low speed with a paddle attachment on low speed",
+		"Add lemon juice",
+		"Add cheese and cayenne.",
+		"Mix to soft dough, until smooth",
+		"Roll mix into logs (about 30cm), lightly dust bench with extra flour to avoid sticking",
+		"Cover logs with baking paper or cling film  to rest",
+		"Rest in fridge, for at least an hour",
+		"Cut into 5mm discs",
+		"Line baking tray with baking paper",
+		"Bake at 170 degrees centigrade for 8 minutes (or until cooked)",
+		"Cool on tray"
+	]
+}

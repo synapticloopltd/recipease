@@ -313,7 +313,7 @@ public class Main {
 				templarContext.add("categories", categoryLookup);
 
 				Parser parser = new Parser(new File(RECIPEASE_TEMPLAR_XML));
-
+				System.out.println(parser.render(templarContext));
 				renderPDF(baseDirectory, outputFile, parser.render(templarContext));
 			} catch (JSONException | IOException | FOPException | TransformerException | ParseException | RenderException | FunctionException ex) {
 				ex.printStackTrace();

@@ -1,6 +1,6 @@
 {
 	"title":"Synapticloop's recipe book",
-	"image":"images/recipes.jpg",
+	"image":"./images/recipes.jpg",
 	"subTitle":"\"Recipes that we have collected and tested from many of our favourite sources and make available to everybody\"",
 	"tocTitle":"Table of Contents",
 	"ingredientsTitle": "Ingredients",
@@ -31,6 +31,7 @@
 			"recipes": [
 				{ "import": "morning-tea/anzac-biscuits.json" },
 				{ "import": "morning-tea/anzac-biscuits-alternate.json" },
+				{ "import": "morning-tea/cheese-biscuits.json" },
 				{ "import": "morning-tea/chrissies-biscuits.json" },
 				{ "import": "morning-tea/financiers.json" },
 				{ "import": "morning-tea/raspberry-muffins.json" },
@@ -52,6 +53,7 @@
 			"recipes": [
 				{ "import": "sauces/applesauce.json" },
 				{ "import": "sauces/bechamel-sauce.json" },
+				{ "import": "sauces/bearnaise.json" },
 				{ "import": "sauces/burger-sauce.json" },
 				{ "import": "sauces/char-siu-marinade.json" },
 				{ "import": "sauces/mint-jelly.json" },
