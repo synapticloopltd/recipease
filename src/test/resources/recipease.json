@@ -53,6 +53,7 @@
 				{ "import": "sauces/applesauce.json" },
 				{ "import": "sauces/bechamel-sauce.json" },
 				{ "import": "sauces/burger-sauce.json" },
+				{ "import": "sauces/char-siu-marinade.json" },
 				{ "import": "sauces/mint-jelly.json" },
 				{ "import": "sauces/peanut-sauce.json" },
 				{ "import": "sauces/teriyaki-sauce.json" },

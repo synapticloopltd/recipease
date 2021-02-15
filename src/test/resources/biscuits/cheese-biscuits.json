@@ -1,0 +1,22 @@
+{
+	"title":"Cheese Biscuits",
+
+	"information": [
+		{"Course":"Biscuits" },
+		{"Total time":"30 minutes to prepare, 1 hour to chill" },
+		{"Skill level":"easy" },
+		{"Cost":"inexpensive" }
+	],
+
+	"categories": [
+		"Biscuits",
+		"Cheese",
+		"Dairy"
+	],
+
+	"ingredients": [
+	],
+
+	"directions": [
+	]
+}
